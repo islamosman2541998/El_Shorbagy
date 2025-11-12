@@ -13,31 +13,29 @@
    <!-- About -->
     @include('site.pages.about')
 
-    <!-- category -->
-    @include('site.pages.product-categories')
-
-    <!-- Products -->
-    @include('site.pages.products')
     
-    <!-- Jobs -->
-    @include('site.pages.careere')
+   <!-- statistics -->
+    @include('site.pages.statistics')
 
-    <!-- Blogs -->
+
+   <!-- services -->
+    @include('site.pages.services')
+
+   <!-- why-us -->
+    @include('site.pages.whychooseus')
+
+  <!-- news -->
+    @include('site.pages.news')
+
+     <!-- Reviews -->
+    <x-reviews :limit="10" />
+
+ <!-- Blogs -->
     @include('site.pages.blogs')
 
     <!-- our-partner -->
     @include('site.pages.our-partner')
 
-    <!-- news -->
-    @include('site.pages.news')
 
-    <!-- contact us -->
-    @include('site.pages.contact-us.home')
-
-    <!-- Reviews -->
-    <x-reviews :limit="10" />
-
-    <!-- FAQ -->
-    @include('site.pages.faq_questions')
     
 @endsection

@@ -18,6 +18,8 @@ class ProjectsRequest extends FormRequest
         $req = [];
         foreach(config('translatable.locales') as $locale){
             $req += [$locale . '.title' => 'required'];
+            $req += [$locale . '.slug' => 'nullable'];
+            $req += [$locale . '.description' => 'required'];
 
             $req += [$locale . '.meta_title' => 'nullable'];
             $req += [$locale . '.meta_description' => 'nullable'];
@@ -27,8 +29,9 @@ class ProjectsRequest extends FormRequest
                 $req += ['image' =>'required|' . ImageValidate()] :
                 $req += ['image' =>'nullable|' . ImageValidate()];
 
-        $req += ['portfolio_id' =>'required'];
+        $req += ['portfolio_id' =>'nullable'];
         $req += ['status' =>'nullable'];
+        $req += ['feature' =>'nullable'];
         $req += ['sort' =>'nullable'];
         $req += ['gallery' =>'nullable|array'];
         $req += ['newgallery' =>'nullable|array'];

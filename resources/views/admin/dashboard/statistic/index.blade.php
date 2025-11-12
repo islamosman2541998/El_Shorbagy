@@ -1,7 +1,7 @@
 @extends('admin.app')
 
-@section('title', trans('statistic.show_statistic'))
-@section('title_page', trans('statistic.show_statistic'))
+@section('title', trans('statistic.statistic'))
+@section('title_page', trans('statistic.statistic'))
 
 @section('style')
     {{-- @vite(['resources/assets/admin/css/data-tables.js']) --}}

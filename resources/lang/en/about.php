@@ -19,8 +19,8 @@ return [
     'ceo_title' => 'CEO Title',
     'ceo_description' => 'CEO Description',
 
-    'vision' => 'Vision',
-    'mission' => 'Mission',
+    'vision' => 'Our Vision',
+    'mission' => 'Our Mission',
     'at_a_glance' => 'At a Glance',
 
     'image' => 'Image',
@@ -53,5 +53,8 @@ return [
     'image1' => 'Image 1',
     'image2' => 'Image 2',
     'image3' => 'Image 3',
+    'add_feature' => 'Add Feature',
+    'features' => 'Features',
+    'Vision_Mission' => 'Vision & Mission',
    
 ];

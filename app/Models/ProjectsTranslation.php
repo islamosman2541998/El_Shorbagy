@@ -13,6 +13,7 @@ class ProjectsTranslation extends Model
         'project_id',
         'locale',
         'title',
+        'description',
         'slug',
         'meta_title',
         'meta_description',

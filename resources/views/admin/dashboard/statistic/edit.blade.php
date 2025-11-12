@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title', trans('statistic.edit_statistic'))
-@section('title_page', trans('statistic.edit', ['name' => @$statistic->trans->where('locale',
+@section('title_page', trans('statistic.edit_statistic', ['name' => @$statistic->trans->where('locale',
     $current_lang)->first()->title]))
 
 

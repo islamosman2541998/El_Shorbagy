@@ -16,6 +16,7 @@ class Projects extends Model
         'image',
         'sort',
         'status',
+        'feature',
         'created_by',
         'updated_by',
     ];
@@ -24,6 +25,7 @@ class Projects extends Model
         'project_id',
         'locale',
         'title',
+        'description',
         'slug',
         'meta_title',
         'meta_description',
@@ -48,6 +50,9 @@ class Projects extends Model
     // Scopes ---------------------------------------------------------------------------------
     public function scopeActive($query){
         return $query->where('status', 1);
+    }
+    public function scopeFeature($query){
+        return $query->where('feature', 1);
     }
 
 

@@ -128,17 +128,7 @@
                                                             @endif
                                                         </div>
 
-                                                        <div class="mt-3">
-                                                            <p>{{ trans('admin.slider_video') }}</p>
-                                                            {{-- video --}}
-                                                            @if ($slider->video)
-                                                                <video width="100%" controls>
-                                                                    <source src="{{ asset($slider->videoInView()) }}"
-                                                                        type="video/mp4">
-                                                                    Your browser does not support the video tag.
-                                                                </video>
-                                                            @endif
-                                                        </div>
+                                                      
 
 
                                                         {{-- Status ------------------------------------------------------------------------------------- --}}

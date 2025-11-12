@@ -1,97 +1,106 @@
-
 {{-- Reviews --}}
 
-	@php
-    $settings     = \App\Settings\SettingSingleton::getInstance();
-    $show_reviews    = (int) $settings->getHome('show_reviews');
+@php
+    $settings = \App\Settings\SettingSingleton::getInstance();
+    $show_reviews = (int) $settings->getHome('show_reviews');
 @endphp
 @if ($show_reviews)
-    <div class="Review testimonial my-4 p-5 text-center  wow fadeInUp">
-
-    <div class="container">
-            <h2 class="testimonialh2">@lang('reviews.reviews')</h2>
-
-        
-        <div class="swiper ReviewSlider">
-            <div class="swiper-wrapper mt-3">
-                @forelse ($reviews as $review)
-                    <div class="swiper-slide">
-                        <div class="Reviewbox d-flex flex-column align-items-center mx-auto p-3 rounded" 
-                             data-bs-toggle="modal" 
-                             data-bs-target="#reviewModal" 
-                             data-name="{{ $review->customer_name }}" 
-                             data-description="{{ $review->description }}" 
-                             data-image="{{ asset($review->pathInView()) }}" 
-                             data-rate="{{ $review->rate }}">
-                            <img src="{{ asset($review->pathInView()) }}" class="img-fluid rounded-circle" alt="{{ $review->customer_name }}" style="width: 100px; height: 100px; object-fit: cover;">
-                            <h4 class="mt-3">
-                                {{ Str::limit($review->customer_name, 20, '...') }}
-                              </h4>
-                              <p class="mt-2">
-                                {{ Str::limit($review->description, 30, '...') }}
-                              </p>
-                         
+    <!-- Testimonial Start -->
+    <section class="testi">
+        <div class="container">
+            <div class="testi-head">
+                {{-- <h6 class="eyebrow">Testimonials</h6> --}}
+                <h2 class="title">What Our Clients Say</h2>
+            </div>
+            <div class="swiper ReviewSlider">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    @forelse ($reviews as $review)
+                        <div class="swiper-slide">
+                            <article class="testi-card " >
+                                <div class="testi-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="testi-text">
+                                   {!! Str::limit($review->description, 100) !!}
+                                </p>
+                                <div class="testi-meta">
+                                    <div class="testi-id">
+                                        {{-- <span class="testi-badge">A</span> --}}
+                                        <div>
+                                            <div class="testi-name">{{ $review->customer_name }}</div>
+                                            <div class="testi-role">Investor</div>
+                                        </div>
+                                    </div>
+                                    <div class="testi-stars" aria-label="5 stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
-                    </div>
-                @empty
-                    <p>{{ app()->getLocale() == 'ar' ? 'لا يوجد تقييمات متاحة' : 'No reviews available' }}</p>
-                @endforelse
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Review Modal -->
-<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="reviewModalLabel">{{ app()->getLocale() == 'ar' ? 'تفاصيل التقييم' : 'Review Details' }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    @empty
+                        <p>{{ app()->getLocale() == 'ar' ? 'لا يوجد تقييمات متاحة' : 'No reviews available' }}</p>
+                    @endforelse
+
+
+                </div>
             </div>
-            <div class="modal-body d-flex flex-column align-items-center mx-auto text-center">
-                <img id="modalImage" src="" class="img-fluid rounded-circle" alt="" style="width: 100px; height: 100px; object-fit: cover;">
-                <h4 id="modalName" class="mt-3"></h4>
-                <p id="modalDescription" class="mt-2"></p>
-                {{-- <div class="rate text-center mt-2" id="modalRate"></div> --}}
-            </div>
+
         </div>
-    </div>
-</div>
+    </section>
+    <!-- Testimonial End -->
 @endif
-
-
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var reviewModal = document.getElementById('reviewModal');
-        reviewModal.addEventListener('show.bs.modal', function (event) {
-            var button = event.relatedTarget; 
-            var name = button.getAttribute('data-name');
-            var description = button.getAttribute('data-description');
-            var image = button.getAttribute('data-image');
-            var rate = parseFloat(button.getAttribute('data-rate'));
+window.addEventListener('load', function () {
+    if (typeof Swiper === 'undefined') {
+        return;
+    }
 
-            document.getElementById('modalImage').src = image;
-            document.getElementById('modalName').textContent = name;
-            document.getElementById('modalDescription').textContent = description;
-
-            var modalRate = document.getElementById('modalRate');
-            modalRate.innerHTML = '';
-            var filledStars = Math.floor(rate);
-            var hasHalfStar = rate - filledStars >= 0.5;
-            for (var i = 1; i <= 5; i++) {
-                var star = document.createElement('i');
-                star.className = 'fa-solid fa-star';
-                if (i <= filledStars) {
-                    star.classList.add('text-warning');
-                } else if (i == filledStars + 1 && hasHalfStar) {
-                    star.classList.add('text-warning', 'half');
-                } else {
-                    star.classList.add('text-secondary');
-                }
-                modalRate.appendChild(star);
-            }
-            modalRate.innerHTML += `<span class="text-muted">(${rate.toFixed(1)})</span>`;
+    const bannerEl = document.querySelector('.banner');
+    if (bannerEl) {
+        new Swiper(bannerEl, {
+            loop: true,
+            autoplay: { delay: 2000, disableOnInteraction: false },
+            navigation: {
+                nextEl: ".banner-button-next",
+                prevEl: ".banner-button-prev",
+            },
+            pagination: { el: '.swiper-pagination', clickable: true },
         });
-    });
+    }
+
+  
+    const reviewEl = document.querySelector('.ReviewSlider');
+    if (reviewEl) {
+        const slidesCount = reviewEl.querySelectorAll('.swiper-slide').length;
+
+       
+        const currentWidth = window.innerWidth;
+        let perView = 1;
+        if (currentWidth >= 1024) perView = 2;
+        else if (currentWidth >= 768) perView = 2;
+        else perView = 1;
+
+        const shouldLoop = slidesCount > perView;
+
+        const swiperReview = new Swiper(reviewEl, {
+            loop: shouldLoop,
+            autoplay: { delay: 2000, disableOnInteraction: false },
+            breakpoints: {
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 2, spaceBetween: 10 },
+            },
+        });
+
+        setTimeout(function () {
+            swiperReview.update();
+        }, 200);
+    }
+});
+
 </script>

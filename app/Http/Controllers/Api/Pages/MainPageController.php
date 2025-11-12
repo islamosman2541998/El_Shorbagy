@@ -96,6 +96,7 @@ class MainPageController extends Controller
             'services_events_image' => asset($homeSetting->getItem('services_events_image')->pathInView()),
         ];
         $data['mission'] = new HomeSettingResource($homeSetting->getItem('mission'));
+        $data['slider'] = new HomeSettingResource($homeSetting->getItem('slider'));
 
         $data['local_florist_just_for_you'] = [
            'section' => new HomeSettingResource($homeSetting->getItem('local_florist_just_for_you')),

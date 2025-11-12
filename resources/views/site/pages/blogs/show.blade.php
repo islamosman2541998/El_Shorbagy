@@ -6,30 +6,21 @@
 
 
 @section('content')
-<div class="container hero blog-page pt-5 py-5 " dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-    <div class="row">
-        <div class="col-md-12 d-flex flex-column align-items-center wow bounceInUp">
-            @if($blog->image)
-                <img src="{{ asset(@$blog->pathInView()) }}"
-                     class="img-thumbnail w-50" alt="{{ @$blog->transNow->title }}">
-            @endif 
-        </div>
-        <div class="col-md-12 mt-5 fs-5 d-flex flex-column align-items-center wow bounceInUp">
-               <h1 class="mb-3 wow bounceInRight">{{ @$blog->transNow->title }}</h1>
-            <div class="blog-description wow bounceInLeft">
-                {!! @$blog->transNow->description !!}
-            </div>
-        </div>
+<section class="blog-single">
+  <div class="container" data-animate="animate__fadeInLeft">
+    <div class="blog-hero">
+      <h1 class="blog-title">{{ @$blog->transNow->title }}</h1>
+      <p class="blog-meta">{{ @$blog->created_at }}</p>
     </div>
-</div>
+
+    <figure class="cover">
+      <img src="{{ asset($blog->pathInView()) }}" class="blogImg" alt="Palm Farming in Egypt">
+    </figure>
+
+    <article class="content">
+      <p>{!! @$blog->transNow->description !!}</p>
+     
+    </article>
+  </div>
+</section>
 @endsection
-<style>
-    .blog-page{
-        margin-top: 140px;
-    }
-</style>
-<style>
-    .hero{
-        margin-top: 70px !important;
-    }
-</style>

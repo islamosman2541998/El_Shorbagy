@@ -5,13 +5,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAboutTranslationsTable extends Migration
+class  CreateWhyChooseUsTranslationsTable extends Migration
 {
     public function up()
     {
-        Schema::create('about_translations', function (Blueprint $table) {
+        Schema::create('why_choose_us_translations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('about_id')->index();
+            $table->unsignedBigInteger('why_choose_us_id')->index();
             $table->string('locale')->index();
 
             $table->string('title')->nullable();
@@ -33,14 +33,14 @@ class CreateAboutTranslationsTable extends Migration
             $table->timestamps();
 
             // foreign key
-            $table->foreign('about_id')
-                  ->references('id')->on('abouts')
+            $table->foreign('why_choose_us_id')
+                  ->references('id')->on('why_choose_us')
                   ->onDelete('cascade');
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('about_translations');
+        Schema::dropIfExists('why_choose_us_translations');
     }
 }

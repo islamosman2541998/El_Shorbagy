@@ -6,38 +6,58 @@
 
 
 @section('content')
-    <header class="hero  wow fadeInDown" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-        <div class="container">
-            <h1 class="color_blue">@lang('blogs.take_a_look_at_our_blogs')</h1>
-            <p class="breadcrumb"><a class="color_red" href="{{ route('site.home') }}">@lang('blogs.home')</a> / 
-                @lang('blogs.blogs')</p>
-        </div>
-    </header>
-    <section class="section" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-        <div class="container">
-            <div class="blog-grid">
-                @forelse ($blogs as $key =>$blog)
-                    <article class="post-card wow bounceInUp" style="animation-delay: 0.{{ ($key + 1) }}s;">
-                        <img class="card-img" src="{{ asset($blog->pathInView()) }}" alt="Science-based approach">
-                        <div class="card-body">
-                            <h4 class="">{{ $blog->title }}</h4>
-                            <p id="ex1" class="excerpt exp-text" data-lines="3">
-                                {!! Str::limit($blog->description, 200) !!}
-                            </p>
-                            <a href="{{ route('site.site.blogs.show', $blog->id) }}"> <button class="btn ghost exp-toggle" data-target="#ex1"
-                                    aria-expanded="false">@lang('blogs.read_more')</button>
-                            </a>
+    <!-- Blog Start -->
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Blog list only (no sidebar) -->
+
+            <h2 class="title text-center pt-3">@lang('admin.blogs')</h2>
+
+            <div class="col-12">
+                <div class="row g-5">
+
+
+                    @forelse ($blogs as $blog)
+                        <div class="col-12 col-sm-6 col-lg-4" data-animate="animate__fadeInLeft">
+                            <div class="blog-item position-relative overflow-hidden">
+                                <img class="img-fluid blogImg" src="{{ asset($blog->pathInView()) }}" alt="">
+                                <a class="blog-overlay" href="{{ route('site.site.blogs.show', $blog->id) }}">
+                                    <h4 class="text-white">{{ $blog->title }}</h4>
+                                    <span class="text-white fw-bold">{{ $blog->created_at }}</span>
+                                </a>
+                            </div>
                         </div>
-                    </article>
-                @empty
-                    <h3>@lang('blogs.no_blogs')</h3>
-                @endforelse
+
+                    @empty
+                        <h3>@lang('blogs.no_blogs')</h3>
+                    @endforelse
+
+
+
+
+                    {{-- <div class="col-12">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-lg justify-content-center m-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link rounded-0" href="#" aria-label="Previous">
+                                        <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link rounded-0" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div> --}}
+
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- Blog End -->
 @endsection
-<style>
-    .hero{
-        margin-top: 60px !important;
-    }
-</style>

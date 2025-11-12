@@ -14,6 +14,9 @@ use App\Models\AboutTranslation;
 use App\Settings\SettingSingleton;
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
+use App\Models\Services;
+use App\Models\Statistic;
+use App\Models\WhyChooseUs;
 
 class HomeController extends Controller
 {
@@ -32,7 +35,10 @@ class HomeController extends Controller
         $faq_questions = Faq::with('translations')->where('status', 1)->get();
 
         $products = Product::with('transNow')->feature()->active()->orderBy('sort','ASC')->take(3)->get(); 
-        $categoryProducts = ProductCategory::with('transNow')->feature()->active()->orderBy('sort','ASC')->get();        
+        $categoryProducts = ProductCategory::with('transNow')->feature()->active()->orderBy('sort','ASC')->get();  
+        $statistics = Statistic::with('transNow')->feature()->active()->orderBy('sort','ASC')->get();    
+        $services = Services::with('transNow')->feature()->active()->orderBy('sort','ASC')->get();   
+        $whyus = WhyChooseUs::with('transNow')->first(); 
        
         $page_name = 'home';
 
@@ -45,7 +51,10 @@ class HomeController extends Controller
             'blogs',
             'partners',
             'news',
-            'faq_questions'
+            'faq_questions',
+            'statistics',
+            'services',
+            'whyus'
         ));
     }
 }

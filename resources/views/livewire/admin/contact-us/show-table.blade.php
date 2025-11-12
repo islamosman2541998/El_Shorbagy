@@ -9,6 +9,8 @@
 
     <td> {!! @$item->email !!} </td>
     <td> {{ @$item->phone }}</td>
+    <td> {{ @$item->subject }}</td>
+
 
     <td>
         {{ substr(removeHTML(@$item->message), 0, 30) }}

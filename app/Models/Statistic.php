@@ -41,7 +41,10 @@ class Statistic  extends Model
         return $this->hasMany(StatisticTranslation::class, 'statistic_id', 'id');
     }
 
-
+ public function transNow()
+    {
+        return $this->hasOne(StatisticTranslation::class, 'statistic_id')->where('locale', app()->getLocale());
+    }
  
 
     

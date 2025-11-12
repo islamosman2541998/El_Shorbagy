@@ -116,7 +116,7 @@
                     <div class="card p-3">
                         <h5>@lang('admin.settings')</h5>
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label">@lang('about.image1')</label>
                             @if ($about->ceo_image)
                                 <div class="mb-2">
@@ -126,19 +126,19 @@
                             @endif
 
                             <input type="file" name="ceo_image" class="form-control" accept="ceo_image/*">
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
-                            <label class="form-label">@lang('about.image2')</label>
+                            <label class="form-label">@lang('about.ceo_image')</label>
                             @if ($about->image)
                                 <div class="mb-2">
                                     <img src="{{ asset('storage/' . $about->image) }}"
-                                        style="width:100%; max-height:150px; object-fit:cover;">
+                                        style="width:100%; max-height:100%; object-fit:cover;">
                                 </div>
                             @endif
                             <input type="file" name="image" class="form-control" accept="image/*">
                         </div>
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label">@lang('about.image3')</label>
                             @if ($about->image_background)
                                 <div class="mb-2">
@@ -147,7 +147,7 @@
                                 </div>
                             @endif
                             <input type="file" name="image_background" class="form-control" accept="image/*">
-                        </div>
+                        </div> --}}
 
 
 

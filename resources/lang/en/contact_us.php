@@ -32,5 +32,7 @@ return [
     'arrange_time'                 => 'Please arrange time for a call',
     'arrange'                 => 'Arrange time',
     'date'                 => 'date',
+    'back_to_investment' => 'Back to Investment',
+    'request_contact' => 'Request Full Details',
 
     ];

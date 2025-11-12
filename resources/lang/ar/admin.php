@@ -580,7 +580,17 @@ return [
     'company' => 'الشركة',
     'timeline' => 'الوقت',
     'attachment' => 'المرفقات',
-    'serviceRequest' => 'طلب الخدمة',
+    'serviceRequest' => 'طلبات الخدمات', 
+    'why_choose_us' => 'لماذا تختارنا',
+    'projects' => 'المشاريع',
+    'contact-us' => 'اتصل بنا',
+    'about-us' => 'نبذه عنا',
+    'see_more' => 'مشاهدة المزيد',
+    'quicklinks' => 'روابط سريعة',
+    'popular_projects' => 'المشاريع الشائعة',
+    'get_in_touch' => 'اتصل بنا',
+    'Projects' => 'المشاريع',
+   
 
 
 

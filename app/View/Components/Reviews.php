@@ -30,6 +30,7 @@ class Reviews extends Component
         if ($this->reviews->isEmpty()) {
             $this->reviews = collect();
         }
+        
     }
 
     /**

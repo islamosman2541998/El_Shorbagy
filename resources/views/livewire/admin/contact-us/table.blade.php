@@ -50,6 +50,7 @@
 
                                 <th>{{ trans('contact_us.email') }}</th>
                                 <th>{{ trans('contact_us.phone') }}</th>
+                                <th>{{ trans('home.subject') }}</th>
 
                                 <th>{{ trans('contact_us.message') }}</th>
                                 <th>{{ trans('contact_us.actions') }}</th>

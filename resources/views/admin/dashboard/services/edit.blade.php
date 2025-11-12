@@ -107,7 +107,7 @@
                                                                 </div>
 
                                                                 {{-- content ------------------------------------------------------------------------------------- --}}
-                                                                <div class="row mb-3">
+                                                                {{-- <div class="row mb-3">
                                                                     <label for="example-text-input"
                                                                         class="col-sm-2 col-form-label"> @lang('admin.content_in')
                                                                         {{ trans('lang.' . Locale::getDisplayName($locale)) }}
@@ -127,7 +127,7 @@
                                                                         })
                                                                     </script>
 
-                                                                </div>
+                                                                </div> --}}
 
 
                                                             </div>
@@ -247,7 +247,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
+                                            {{-- category ------------------------------------------------------------------------------------- -- }}
+                                            {{-- <div class="row mb-3">
                                                 <label class="col-sm-12 col-form-label">@lang('admin.category')</label>
                                                 <div class="col-sm-12">
                                                     <select name="service_category_id" class="form-control">
@@ -260,7 +261,7 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             {{-- sort ------------------------------------------------------------------------------------- --}}
                                             <div class="col-12">
                                                 <div class="row mb-3">

@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ReviewsController;
 use App\Http\Controllers\Admin\MainPageController;
+use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\WhatsAppController;
@@ -35,6 +36,7 @@ use App\Http\Controllers\Admin\StatisticController;
 use App\Http\Controllers\Admin\SubscribesController;
 use App\Http\Controllers\Admin\imageUploadController;
 use App\Http\Controllers\Admin\SpecialtiesController;
+use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\Admin\PortfolioTagController;
 use App\Http\Controllers\Admin\PaymentMethodController;
 use App\Http\Controllers\Admin\CareerCategoryController;
@@ -156,8 +158,16 @@ Route::group([
                 Route::get('blogs-update-featured/{id}', [BlogController::class, 'updateFeature'])->name('blogs.update-featured');
                 Route::get('blogs-update-status/{id}', [BlogController::class, 'updateStatus'])->name('blogs.update-status');
 
+
+                //--------------- Start About -------------------------------------
                 Route::get('about', [AboutController::class, 'edit'])->name('about.edit');
                 Route::post('about', [AboutController::class, 'update'])->name('about.update');
+
+
+                //--------------- Start WhyChooseUs -------------------------------------
+                Route::get('why-choose-us', [WhyChooseUsController::class, 'edit'])->name('why-choose-us.edit');
+                Route::post('why-choose-us', [WhyChooseUsController::class, 'update'])->name('why-choose-us.update');
+               
                 // ----- subscribes -----------------------------------------------
                 Route::resource('subscribes', SubscribesController::class);
                 //--------------- End subscribes ---------------------------------
@@ -227,6 +237,12 @@ Route::group([
                 Route::get('services/update-status/{id}', [ServicesController::class, 'update_status'])->name('services.update-status');
                 Route::post('services/actions', [ServicesController::class, 'actions'])->name('services.actions');
                 Route::get('services/update-featured/{id}', [ServicesController::class, 'update_featured'])->name('services.update-featured');
+                // ----- End Services -------------------------------------------
+                // ----- Services -----------------------------------------------
+                Route::resource('projects', ProjectsController::class);
+                Route::get('projects/update-status/{id}', [ProjectsController::class, 'update_status'])->name('projects.update-status');
+                Route::post('projects/actions', [ProjectsController::class, 'actions'])->name('projects.actions');
+                Route::get('projects/update-featured/{id}', [ProjectsController::class, 'update_featured'])->name('projects.update-featured');
                 // ----- End Services -------------------------------------------
 
                 // ----- Cv -----------------------------------------------

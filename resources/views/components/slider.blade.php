@@ -3,36 +3,69 @@
     $show_slider    = (int) $settings->getHome('show_slider');
     
 @endphp
-
-   <!-- Hero Section Begin -->
-    <section class="hero" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-        <div class="hero__slider owl-carousel">
-
-            @forelse ($slides as $slide)
-            <div class="hero__item set-bg bgImg"
-            {{-- style="background-image: url('{{ asset($slide->pathInView()) }}') !important;" --}}
-             data-setbg="{{ asset($slide->pathInView()) }}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <span>{!!  $slide->description !!} </span>
-                                <h2>{{ $slide->title }}</h2>
-                                <a href="#" class="primary-btn">See more about us</a>
-                            </div>
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 ">
+        <div  class="swiper banner" >
+            <div class="swiper-wrapper">
+                 @forelse ($slides as $slide)
+                <div class="swiper-slide {{ $loop->first ? 'active' : '' }}">
+                    <img class="w-100" src="{{ asset($slide->pathInView()) }}"  alt="Image">
+                    <div
+                        class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
+                        <div class="bgContent p-5">
+                            <h4 class="text-white">  {!! $slide->transNow->description ?? 'No Description' !!}</h4>
+                            <h3 class="display-1 text-white mb-md-4 header_h3">{{ $slide->transNow->title ?? 'No Title' }}</h3>
+                            <a href="{{ route('site.about-us') }}" class="btn btn-primary py-md-3 px-md-5 me-3 lightgreen">@lang('admin.about-us')</a>
+                            <a href="{{ route('site.contact-us') }}" class="btn btn-secondary py-md-3 px-md-5 lightbrown">@lang('admin.contact-us')</a>
                         </div>
                     </div>
                 </div>
+                @empty
+
+
+                @endforelse
+                
             </div>
-            @empty
-            
-
-
-            @endforelse 
-          
-          
+    <div class="swiper-pagination"></div>
+        <div class="banner-button-prev swiper-button-prev"></div>
+        <div class="banner-button-next swiper-button-next"></div>
         </div>
-    </section>
-    <!-- Hero Section End -->
+    </div>
+    <!-- Carousel End -->
+    <!-- Banner Start -->
+    <div class="container-fluid banner mb-5" data-animate="animate__fadeInLeft">
+        <div class="container">
+            <div class="row gx-0">
+                <div class="col-md-6 ">
+                    <div class=" bg-vegetable d-flex flex-column justify-content-center p-5 bannerDiv">
+                        <h3 class="text-white mb-3">@lang('home.navtitle1')</h3>
+                        <p class="text-white">@lang('home.navdes1')</p>
+                        <a class="text-white fw-bold" href="./Investment.html">@lang('home.read_more')<i
+                                class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class=" bg-fruit d-flex flex-column justify-content-center p-5 bannerDiv">
+                        <h3 class="text-white mb-3"> @lang('home.navtitle2')</h3>
+                        <p class="text-white">@lang('home.navdes2')</p>
+                        <a class="text-white fw-bold" href="./Investment.html">@lang('home.read_more')<i
+                                class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner End -->
+
+  <style>
+    @media (max-width: 780px) {
+      .display-1 {
+        font-size: 20px !important;
+    }
+    }
 
   
+    .swiper-button-next, .swiper-button-prev {
+        color: #60d1af !important;
+    }
+  </style>

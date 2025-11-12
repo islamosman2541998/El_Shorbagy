@@ -3,10 +3,12 @@
 namespace App\View\Components;
 
 use App\Models\Menue;
+use App\Models\Projects;
 use App\Models\SettingsValues;
+use Illuminate\View\Component;
 use App\Settings\SettingSingleton;
 use Illuminate\Support\Facades\App;
-use Illuminate\View\Component;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 class Footer extends Component
 {
@@ -25,6 +27,8 @@ class Footer extends Component
     public $settings;
     public $facebookLink;
     public $instagramLink;
+
+    public $popularprojects;
 
     public function __construct()
     {
@@ -46,6 +50,7 @@ class Footer extends Component
         $this->address = $this->settings->getItem('address') ?? 'not found';
         $this->mobile = $this->settings->getItem('mobile') ?? 'not found';
         $this->email = $this->settings->getItem('email') ?? 'not found';
+      $this->popularprojects = Projects::with('trans')->where('status', 1)->limit(6)->get();
     }
 
     public function render()

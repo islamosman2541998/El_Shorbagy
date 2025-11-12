@@ -13,12 +13,10 @@
         </div>
     </section>
 
+   
+
     @livewire('site.faq.index', ['categories' => $categories], key($user->id))
 
 
 @endsection
-<style>
-    .hero{
-        margin-top: 70px !important;
-    }
-</style>
+

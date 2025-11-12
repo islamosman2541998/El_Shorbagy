@@ -5,40 +5,34 @@
      $show_blogs = (int) $settings->getHome('show_blogs');
  @endphp
  @if ($show_blogs)
-     <section class="blog-section text-center py-5" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-         <h2 class="section-title wow fadeInDown">@lang('blogs.blogs')</h2>
-
-         <div class="DivNews">
-         </div>
-         {{-- <p class="section-sub pt-2 wow fadeInDown">@lang('blogs.blogs_p')</p> --}}
-         <div class="container pt-3">
-             <div class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-                 @forelse ($blogs as $key => $blog)
-                     <div class=" col-lg-4 col-md-6 card wow bounceInUp" style="animation-delay: 0.{{ $key + 1 }}s;">
-                         <div class="blog-card">
-                             <div class="blog-media">
-                                 <img src="{{ asset($blog->pathInView()) }}" alt="Your Image Alt Text">
-                             </div>
-                             <div class="blog-body">
-                                 <h3 class="blog-title">{{ $blog->title }}</h3>
-                                 <p class="blog-text">{!! Str::limit($blog->description, 200) !!}</p>
-                                 <a href="{{ route('site.site.blogs.show', $blog->id) }}" class="blog-btn"
-                                     aria-label="Read More: The Future of Generic Medicines">@lang('blogs.see_more')</a>
-                             </div>
-                         </div>
-                     </div>
-                 @empty
+        <!-- Blog Start -->
+    <div class="container-fluid py-4 ">
+        <div class="container">
+            <div class="mx-auto text-center mb-5 BlogDiv">
+                {{-- <h6 class="text-primary text-uppercase">Our Blog</h6> --}}
+                <h1 class="display-5">Latest Articles From Our Blog Post</h1>
+            </div>
+            <div class="row g-5">
+                @forelse ($blogs as $blog)
+                <div class="col-lg-4" data-animate="animate__backInRight">
+                    <div class="blog-item position-relative overflow-hidden blogs">
+                        <img class="img-fluid blogImg" src="{{ asset($blog->pathInView()) }}" alt="">
+                        <a class="blog-overlay" href="./singleblog.html">
+                            <h4 class="text-white">{{ $blog->title }}</h4>
+                            <span class="text-white fw-bold">{{ $blog->created_at }}</span>
+                            <span>@lang('home.read_more')</span>
+                        </a>
+                    </div>
+                </div>
+                     @empty
                      <h3>@lang('blogs.no_blogs')</h3>
                  @endforelse
-
-
-             </div>
-         </div>
-         <div class="viewall  wow fadeInLeft" dir="{{ app()->getLocale() == 'en' ? 'ltr' : 'ltr' }}">
-             <a class="viewnews" href="{{ route('site.site.blogs.index') }}">
-                 <span class="viewnewstext">@lang('site.view_all_blogs')</span>
-                 <span class="viewnewsspan">→</span>
-             </a>
-         </div>
-     </section>
+             
+                <div class="seemoreBtn">
+                    <a href="{{ route('site.site.blogs.index') }}" class="btn btn-primary py-md-3 px-md-5 greenbg">@lang('admin.see_more')</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
  @endif

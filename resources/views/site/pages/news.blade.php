@@ -1,50 +1,55 @@
  <!-- news -->
- 	@php
-    $settings     = \App\Settings\SettingSingleton::getInstance();
-    $show_news    = (int) $settings->getHome('show_news');
-@endphp
-@if ($show_news)
-     <section class="latestnews" id="latest-news" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-     <div class="news">
-         <div class="newstitle wow fadeInDown">
-             <h2 class="newsh2">@lang('site.latest_news')</h2>
-             <div class="DivNews">
+ @php
+     $settings = \App\Settings\SettingSingleton::getInstance();
+     $show_news = (int) $settings->getHome('show_news');
+ @endphp
+ @if ($show_news)
+     <!-- news Start -->
+     <div class="container-fluid py-4 ">
+         <div class="container">
+             <div class="mx-auto text-center mb-5 newDiv">
+                 {{-- <h6 class="text-primary text-uppercase">Our news</h6> --}}
+                 <h1 class="display-5">Latest from Our News</h1>
+             </div>
+             <div class="row g-5">
+                 @forelse ($news as $new)
+                     <div class="col-lg-4 col-md-6" data-animate="animate__backInRight">
+                         <div class="row g-0">
+                             <div class="col-10">
+                                 <div class="position-relative newsdiv">
+                                     <img class="img-fluid w-100" src="{{ asset($new->image) }}" alt="">
+                                     <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4 newcontent">
+                                         <h4 class="text-white">{{ $new->title ?? 'No Title' }}</h4>
+                                         <span class="text-white">{!! $new->description ?? 'No Description' !!}</span>
+                                         <span>{{ $new->created_at ?? 'No Date' }}</span>
+                                         <a href="{{ route('site.news.show', $new->id) }}"><span>@lang('home.read_more')</span></a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-2">
+                                 <div
+                                     class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
+                                     <a class="btn btn-square rounded-circle bg-white" href="{{ $settings->getItem('twitter') }}"><i
+                                             class="fab fa-twitter text-secondary"></i></a>
+                                     <a class="btn btn-square rounded-circle bg-white" href="{{ $settings->getItem('facebook') }}"><i
+                                             class="fab fa-facebook-f text-secondary"></i></a>
+                                     <a class="btn btn-square rounded-circle bg-white" href="{{ $settings->getItem('linkedin') }}"><i
+                                             class="fab fa-linkedin-in text-secondary"></i></a>
+                                     <a class="btn btn-square rounded-circle bg-white" href="{{ $settings->getItem('instagram') }}"><i
+                                             class="fab fa-instagram text-secondary"></i></a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 @empty
+                     <h3>@lang('site.no_news')</h3>
+                 @endforelse
+
+                 <div class="seemoreBtn">
+                     <a href="{{ route('site.news.index') }}" class="btn btn-primary py-md-3 px-md-5 greenbg">@lang('admin.see_more')</a>
+                 </div>
              </div>
          </div>
-         <div class="news-grid gridNews">
-             @forelse ($news as $key => $new)
-                 <article class="news-card newcard wow bounceInUp" style="animation-delay: 0.{{ ($key + 1) }}s;">
-                     <a href="#" class="newA">
-                         <img class="newImg" src="{{ asset($new->image) }}" alt="Selenium ACE new pack size">
-                         <div class="new1">
-                             <time class="newtime" datetime="2025-09-18">{{ $new->created_at }}</time>
-                             <h3 class="newh3">
-                                 {{ $new->title }}
-                             </h3>
-                             <a href="{{ route('site.news.show', $new->id) }}') }}" class="newbtn">
-                                 <span class="NewBtn">
-                                     @lang('site.read_more') </span>
-                             </a>
-                         </div>
-                     </a>
-                 </article>
-             @empty
-                 <h3>@lang('site.no_news')</h3>
-             @endforelse
-
-         </div>
-
-
-         <div class="viewall py-3 wow fadeInLeft" dir="{{ app()->getLocale() == 'en' ? 'ltr' : 'ltr' }}">
-             <a class="viewnews" href="{{ route('site.news.index') }}">
-                 <span class="viewnewstext">@lang('site.view_all_news')</span>
-                 <span class="viewnewsspan">→</span>
-             </a>
-         </div>
-
      </div>
-
-
- </section>
-@endif
-
+     <!-- news End -->
+ @endif

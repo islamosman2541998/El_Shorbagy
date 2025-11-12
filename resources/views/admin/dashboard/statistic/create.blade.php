@@ -1,7 +1,7 @@
 @extends('admin.app')
 
-@section('title', trans('statistic.create'))
-@section('title_page', trans('statistic.create'))
+@section('title', trans('statistic.create_statistic'))
+@section('title_page', trans('statistic.create_statistic'))
 
 @section('content')
 

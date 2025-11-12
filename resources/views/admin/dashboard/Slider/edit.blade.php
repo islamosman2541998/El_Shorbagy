@@ -142,26 +142,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        @if ($slider->video)
-                                                            <video width="100%" controls>
-                                                                <source src="{{ asset($slider->videoInView()) }}"
-                                                                    type="video/mp4">
-                                                                Your browser does not support the video tag.
-                                                            </video>
-                                                        @endif
-                                                        {{-- video ------------------------------------------------------------------------------------- --}}
-                                                        <div class="col-12">
-                                                            <div class="row mb-3">
-                                                                <label for="example-number-input" col-form-label>
-                                                                    @lang('admin.video'):</label>
-                                                                {{-- <span class="text-danger">@lang('admin.video_site', ['width' => '1600px', 'height' => '750px'])</span> --}}
-                                                                <div class="col-sm-12">
-                                                                    <input class="form-control" type="file"
-                                                                        id="example-number-input"
-                                                                        name="video"value="{{ old('video') }}">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                       
+                                                    
                                                         {{-- URL ------------------------------------------------------------------------------------- --}}
                                                         <div class="col-12">
                                                             <div class="row mb-3">

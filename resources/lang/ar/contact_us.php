@@ -31,5 +31,7 @@ return [
     'arrange_time'                 => 'يرجى ترتيب وقت للمكالمة',
     'arrange'                 => 'ترتيب الوقت',
     'date'                 => ' التاريخ',
+    'back_to_investment' => 'رجوع للمشاريع',
+    'request_contact' => 'التواصل معنا',
     
     ];

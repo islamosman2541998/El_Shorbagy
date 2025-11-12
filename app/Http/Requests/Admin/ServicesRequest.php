@@ -61,7 +61,7 @@ class ServicesRequest extends FormRequest
         $req += ['news_ticker' =>'nullable'];
         $req += ['updated_by' =>'nullable'];
         $req += ['created_by' =>'nullable'];
-        $req += ['service_category_id' =>'required'];
+        // $req += ['service_category_id' =>'required'];
 
 
 

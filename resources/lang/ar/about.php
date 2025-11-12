@@ -58,5 +58,8 @@ return [
     'image1' => 'صورة 1',
     'image2' => 'صورة 2',
     'image3' => 'صورة 3',
+    'add_feature' => 'اضافة خاصية',
+    'features' => 'الخصائص',
+    'Vision_Mission' => 'الرؤية والرسالة',
     
 ];

@@ -18,12 +18,12 @@
         </li>
     @else
         
-            <li class="{{ $isActive ? 'active' : '' }}">
-                <a
+            
+                <a class="nav-item nav-link {{ $isActive ? 'active' : '' }}"
                     href="{{ LaravelLocalization::getLocalizedURL(app()->getLocale(), $item->type == 'dynamic' ? $item->dynamic_url : $item->url) }}">
                     {{ $item->trans->where('locale', app()->getLocale())->first()->title ?? 'No Title' }}
                 </a>
-            </li>
+           
        
     @endif
 @endforeach

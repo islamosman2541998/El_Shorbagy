@@ -480,6 +480,11 @@
                         <i class="fas fa-comment"></i>
                         @lang('admin.serviceRequest')</a></li>
                 {{--         service_request             --}}
+                {{--         projects             --}}
+                <li><a href="{{ route('admin.projects.index') }}">
+                        <i class="fas fa-project-diagram"></i>
+                        @lang('admin.projects')</a></li>
+                {{--         projects             --}}
                 
                 <li><a href="{{ route('admin.cvs.index') }}">
                         <i class="fas fa-id-card"></i>
@@ -502,6 +507,11 @@
 
                 <li><a href="{{ route('admin.about.edit') }}"><i class="fa fa-address-card" aria-hidden="true"></i>
                         @lang('admin.about')</a></li>
+
+                {{--  why_choose_us --}}
+
+                <li><a href="{{ route('admin.why-choose-us.edit') }}"><i class="fa fa-address-card" aria-hidden="true"></i>
+                        @lang('admin.why_choose_us')</a></li>
 
                 {{-- Contact Us ----------------------------------------------------------- --}}
                 <li>

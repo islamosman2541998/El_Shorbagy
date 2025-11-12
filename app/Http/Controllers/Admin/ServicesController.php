@@ -42,7 +42,7 @@ class ServicesController extends Controller
     public function store(ServicesRequest $request)
     {
         $data = $request->getSanitized();
-            $data['service_category_id'] = $request->input('service_category_id');
+            // $data['service_category_id'] = $request->input('service_category_id');
 
 
         if ($request->hasFile('image')) {

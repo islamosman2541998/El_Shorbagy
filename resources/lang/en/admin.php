@@ -564,6 +564,16 @@ return [
     'timeline' => 'Timeline',
     'attachment' => 'Attachment',
     'serviceRequest' => 'Service Request',
+    'why_choose_us' => 'Why Choose Us',
+    'projects' => 'Projects',
+    'about-us' => 'About-us',
+    'contact-us' => 'Contact-us',
+    'see_more' => 'See More',
+    'quicklinks' => 'Quick Links',
+    'popular_projects' => 'Popular Projects',
+   'get_in_touch' => 'Get In Touch',
+   'Projects' => 'Projects',
+    
 
 
 

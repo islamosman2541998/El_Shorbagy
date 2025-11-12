@@ -5,8 +5,8 @@
             <h3>@lang('home.faq-index_h3')</h3>
             <p class="mini">@lang('home.faq-index_pp')</p>
             <div class="faq-cta">
-                <a class="btn primary blue_btn" href="{{ route('site.contact-us')}}">@lang('home.contact')</a>
-                <a class="btn light blue_btn" href="{{ route('site.site.blogs.index')}}">@lang('home.read')</a>
+                <a class="btn1 primary" href="{{ route('site.contact-us')}}">@lang('home.contact')</a>
+                <a class="btn1 light" href="{{ route('site.site.blogs.index')}}">@lang('home.read')</a>
             </div>
         </aside>
 

@@ -6,26 +6,27 @@
 
 
 @section('content')
-<div class="container hero blog-page pt-5 py-5" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-
- 
-    <div class="row">
-        <div class="col-md-12 d-flex flex-column align-items-center">
-            @if($news->image)
-                <img src="{{ asset($news->image) }}"
-                     class="img-thumbnail w-50" alt="{{ $news->title }}">
-            @endif
-
-         
-        </div>
-        <div class="col-md-12 mt-5 fs-5 d-flex flex-column align-items-center">
-               <h1 class="mb-3">{{ $news->title }}</h1>
-            <div class="blog-description">
-                {!! $news->description !!}
-            </div>
-        </div>
+<!-- ============ Blog Section (Palm Farming Article) ============ -->
+<section class="blog-single">
+  <div class="container" data-animate="animate__fadeInLeft">
+    <div class="blog-hero">
+      <h1 class="blog-title">{{ $news->title }}</h1>
+      <p class="blog-meta">{{ $news->created_at }}</p>
     </div>
-</div>
+
+    <figure class="cover">
+      <img src="{{ asset($news->image) }}" class="blogImg" alt="Palm Farming in Egypt">
+    </figure>
+
+    <article class="content">
+
+
+      <h3>{!! $news->description !!}</h3>
+
+    
+    </article>
+  </div>
+</section>
 @endsection
 <style>
     .blog-page{

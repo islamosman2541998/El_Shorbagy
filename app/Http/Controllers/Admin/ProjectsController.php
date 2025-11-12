@@ -11,18 +11,15 @@ use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
 {
-    public $portfolio;
 
     public function __construct()
     {
-        $this->portfolio = Portfolios::query()->with('trans')->get();
     }
     
     public function index(Request $request)
     {
         
-        $query = Projects::query()->with('trans', 'portfolio')->orderBy('id', 'ASC');
-        $portfolios = $this->portfolio;
+        $query = Projects::query()->with('trans')->orderBy('id', 'ASC');
     
         if($request->status  != ''){
             if( $request->status == 1) $query->where('status', $request->status );
@@ -31,18 +28,15 @@ class ProjectsController extends Controller
         if ($request->title  != '') {
             $query = $query->orWhereTranslationLike('title', '%' . request()->input('title') . '%');
         }
-        if($request->portfolio_id != ''){
-            $query = $query->where('portfolio_id',  request()->input('portfolio_id') );
-        }
+     
         
         $items = $query->paginate($this->pagination_count);
-        return view('admin.dashboard.projects.index', compact('items', 'portfolios'));
+        return view('admin.dashboard.projects.index', compact('items'));
     }
 
     public function create()
     {
-        $portfolios = $this->portfolio;
-        return view('admin.dashboard.projects.create', compact('portfolios'));
+        return view('admin.dashboard.projects.create');
     }
 
 
@@ -53,6 +47,7 @@ class ProjectsController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $this->upload_file($request->file('image'), ('project'));
         }
+        $data['protolio_id'] =  Portfolios::first()->id;
         $project = Projects::create($data);
 
         if (@$data['gallery'] != null || @$data['gallery'] != []) {
@@ -83,8 +78,7 @@ class ProjectsController extends Controller
 
     public function edit(Projects $project)
     {
-        $portfolios = $this->portfolio;
-        return view('admin.dashboard.projects.edit', compact('project', 'portfolios'));
+        return view('admin.dashboard.projects.edit', compact('project'));
     }
 
 
@@ -95,6 +89,8 @@ class ProjectsController extends Controller
             @unlink($project->image);
             $data['image'] = $this->upload_file($request->file('image'), ('project'));
         }
+        $data['protolio_id'] =  Portfolios::first()->id;
+
         $project->update($data);
         
         $this->updateImages($data, $project);

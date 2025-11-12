@@ -7,7 +7,7 @@ return [
     'linkedin' => 'Linkedin',
     'google_map' => 'Open in Google Maps',
     'all_rights_reserved' => 'Tetra Pharma — All Rights Reserved',
-    'faq' => 'FAQ',
+    'faq' => 'Frequently Asked Questions',
     'faq_title' => 'Frequently Asked Questions',
     'faq_p' => 'We’ve got answers.',
     'no_faq' => 'No faq questions',
@@ -34,5 +34,17 @@ return [
     'copyright' => 'All Rights Reserved &copy; :year :company',
     'sending' => 'Sending...',
     'cv_file' => 'CV File',
+    'about-us' => 'About Us',
+    'contact-us' => 'Contact Us',
+    'navtitle1' => 'Investment in Agriculture',
+    'navtitle2' => 'Sustainable Agriculture',
+    'navdes1' => 'Start your agricultural project with a smart and efficient plan that combines the best of both worlds. We offer a wide range of agricultural products and services to help you succeed in the agricultural industry.',
+    'navdes2' => 'We are committed to sustainability and environmental responsibility. Our products and services are designed to be eco-friendly, sustainable, and safe for the environment.',
+    'read_more' => 'Read more',
+    'no_services' => 'No services',
+    'send_message' => 'Send Message',
+    'subject' => 'Subject',
+    'services_description' => 'End-to-end solutions from feasibility to market access—balancing returns and
+                        sustainability to secure your farm project’s success.',
+    'Services' => 'Services',
 ];
-?>
