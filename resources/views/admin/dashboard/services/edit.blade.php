@@ -210,7 +210,87 @@
 
                                 </div>
 
+    {{-- images Gellary  --}}
+                                        <div class="accordion mt-4 mb-4" id="accordionExample">
+                                            <div class="accordion-item border rounded">
+                                                <h2 class="accordion-header" id="headingImage">
+                                                    <button class="accordion-button fw-medium"
+                                                        type="button"data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseImage" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                        @lang('admin.gallerys')
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseImage" class="accordion-collapse collapse show mt-3"
+                                                    aria-labelledby="headingImage" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
 
+
+                                                        <div class="row mb-3">
+
+
+                                                            <div id="images_section">
+                                                                @forelse($service->images as $key => $img)
+                                                                    <div class="ads mt-3">
+                                                                        <div class="row">
+                                                                            <input type="hidden" name="gallery[image][]"
+                                                                                value="{{ $img->url }}"
+                                                                                id="">
+                                                                            <input type="hidden" name="gallery[id][]"
+                                                                                value="{{ $img->id }}"
+                                                                                id="">
+                                                                            <div class="col-md-6 col-sm-12 mb-3">
+                                                                                <label for="example-number-input">
+                                                                                    @lang('admin.sort'):</label>
+                                                                                <div class="col-sm-12">
+                                                                                    <input type="number"
+                                                                                        name="gallery[sort][]"
+                                                                                        value="{{ $img->sort }}"
+                                                                                        class="form-control">
+                                                                                    <input type="file"
+                                                                                        name="gallery[image][]"
+                                                                                        value="{{ $img->sort }}"
+                                                                                        class="form-control mt-3">
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            @if (@$img->url != null)
+                                                                                <div class="col-md-6 col-sm-12 mb-3">
+                                                                                    <a href="{{ asset(@$img->url) }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset(@$img->url) }}"
+                                                                                            alt="" width="50%">
+                                                                                    </a>
+                                                                                </div>
+                                                                            @endif
+
+                                                                        </div>
+
+                                                                        <div class="col-12 text-center">
+                                                                            <button type="button"
+                                                                                class="btn btn-danger delete_img form-control"><i
+                                                                                    class="fa fa-trash"></i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+                                                                @empty
+                                                                @endforelse
+                                                            </div>
+
+
+                                                            <a type="button" class="btn btn-success form-control"
+                                                                id="add_images_section">
+                                                                <i class="fa fa-plus"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
 
                         </div>
 
@@ -339,4 +419,36 @@
 @section('style')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+     <script>
+        $(document).ready(function() {
+            $('#add_images_section').on('click', function() {
+                $('#images_section').append(
+                    `
+                    <div class="images ">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="example-number-input"  > @lang('admin.image'):</label>
+                                <input type="file" name="newgallery[][image]"   class="form-control" required>
+                            </div>
+                            <div class="col-6">
+                                <label for="example-number-input"  > @lang('admin.sort'):</label>
+                                <input type="number" name="newgallery[][sort]"  class="form-control"  >
+                            </div>
+                            <div class="col-12 mt-3">
+                                <button class="btn btn-danger delete_img form-control"><i class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    `
+                )
+
+            });
+
+
+            $('#images_section').on('click', '.delete_img', function(e) {
+                $(this).parent().parent().remove();
+            })
+        });
+    </script>
 @endsection

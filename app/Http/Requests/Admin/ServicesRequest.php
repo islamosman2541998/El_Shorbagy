@@ -58,6 +58,8 @@ class ServicesRequest extends FormRequest
         $req += ['status' =>'nullable'];
         $req += ['sort' =>'nullable'];
         $req += ['feature' =>'nullable'];
+        $req += ['gallery' =>'nullable|array'];
+        $req += ['newgallery' =>'nullable|array'];
         $req += ['news_ticker' =>'nullable'];
         $req += ['updated_by' =>'nullable'];
         $req += ['created_by' =>'nullable'];

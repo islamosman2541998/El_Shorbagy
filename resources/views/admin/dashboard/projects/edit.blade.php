@@ -57,25 +57,26 @@
                                                                         class="missiong-spam">{{ $errors->first($locale . '.title') }}</span>
                                                                 @endif
                                                             </div>
-                                                         {{-- description ------------------------------------------------------------------------------------- --}}
-                                                <div class="row mb-3">
-                                                    <label for="example-text-input" class="col-sm-2 col-form-label"> @lang('admin.description_in')
-                                                        {{ trans('lang.' . Locale::getDisplayName($locale)) }}
-                                                    </label>
-                                                    <div class="col-sm-10 mb-2">
-                                                        <textarea id="description{{ $key }}" name="{{ $locale }}[description]"> {{ @$project->trans->where('locale', $locale)->first()->title }} {{ old($locale . '.description') }} </textarea>
-                                                        <script type="text/javascript">
-                                                            CKEDITOR.replace('description{{ $key }}', {
-                                                                filebrowserUploadUrl: "{{ route('admin.ckeditor.upload', ['_token' => csrf_token()]) }}"
-                                                                , filebrowserUploadMethod: 'form'
-                                                            });
-
-                                                        </script>
-                                                        @if ($errors->has($locale . '.description'))
-                                                        <span class="missiong-spam">{{ $errors->first($locale . '.description') }}</span>
-                                                        @endif
-                                                    </div>
-                                                </div>
+                                                            {{-- description ------------------------------------------------------------------------------------- --}}
+                                                            <div class="row mb-3">
+                                                                <label for="example-text-input"
+                                                                    class="col-sm-2 col-form-label"> @lang('admin.description_in')
+                                                                    {{ trans('lang.' . Locale::getDisplayName($locale)) }}
+                                                                </label>
+                                                                <div class="col-sm-10 mb-2">
+                                                                    <textarea id="description{{ $key }}" name="{{ $locale }}[description]"> {{ @$project->trans->where('locale', $locale)->first()->title }} {{ old($locale . '.description') }} </textarea>
+                                                                    <script type="text/javascript">
+                                                                        CKEDITOR.replace('description{{ $key }}', {
+                                                                            filebrowserUploadUrl: "{{ route('admin.ckeditor.upload', ['_token' => csrf_token()]) }}",
+                                                                            filebrowserUploadMethod: 'form'
+                                                                        });
+                                                                    </script>
+                                                                    @if ($errors->has($locale . '.description'))
+                                                                        <span
+                                                                            class="missiong-spam">{{ $errors->first($locale . '.description') }}</span>
+                                                                    @endif
+                                                                </div>
+                                                            </div>
                                                         @endforeach
 
 

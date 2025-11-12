@@ -12,15 +12,8 @@
             <div class="row align-items-start">
                 <!-- Left Side (Image Gallery) -->
                 <div class="col-lg-6" data-animate="animate__fadeInLeft">
-                    <div class="main-image mb-3">
-                        <img src="./webImg/b6.jpg" alt="Irrigation Systems" />
-                    </div>
-                    <div class="thumb-gallery d-flex gap-2">
-                        <img src="./webImg/b4.jpg" alt="Irrigation System" />
-                        <img src="./webImg/palmtree.png" alt="Farm Equipment" />
-                        <img src="./webImg/b5.jpg" alt="Water Management" />
-                        <img src="./webImg/b7.jpg" alt="Water Management" />
-                    </div>
+                   @livewire('site.service-gallery', ['serviceId' => $services->id])
+
                 </div>
 
                 <!-- Right Side (Details) -->

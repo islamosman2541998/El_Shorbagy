@@ -51,6 +51,9 @@ class Services extends Model
     {
         return $this->hasOne(ServicesTranslation::class, 'service_id')->where('locale', app()->getLocale());
     }
+     public function images() {
+        return $this->morphMany(Images::class, 'parentable')->orderBy('sort', 'ASC');
+    }
     // Scopes ----------------------------
     public function scopeActive($query)
     {

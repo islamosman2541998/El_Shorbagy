@@ -21,7 +21,7 @@ class ServicesController extends Controller
    public function show(Services $services)
     {
        
-        $services->load('trans');
+        $services->load('trans', 'images');
 
         return view('site.pages.services.show', compact('services'));
     }
