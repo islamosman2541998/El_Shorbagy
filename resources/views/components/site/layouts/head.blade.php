@@ -8,6 +8,7 @@
     <meta property="og:title" content="{{ $title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ url()->current() }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="og:image" content="{{ asset($settings->getItem('logo') ?? 'site/img/logos/logo.png') }}">
     <link rel='dns-prefetch' href='//use.fontawesome.com' />
     <!-- Google Web Fonts -->
