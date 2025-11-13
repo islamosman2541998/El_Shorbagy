@@ -4,7 +4,6 @@
 @section('title_page', trans('services.show', ['name' => @$service->trans->where('locale', $current_lang)->first()->title]) )
 
 @section('content')
-    {{dd('here')}}
 
     <div class="container-fluid">
 

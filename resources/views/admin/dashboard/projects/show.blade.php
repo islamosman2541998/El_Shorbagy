@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title', trans('project.show_project'))
-@section('title_page', trans('project.edit', ['name' => @$project->trans->where('locale',
+@section('title_page', trans('project.show', ['name' => @$project->trans->where('locale',
     $current_lang)->first()->title]))
 
 

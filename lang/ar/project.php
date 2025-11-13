@@ -10,6 +10,7 @@ return [
     'project'                   => 'المشاريع',
     'edit'                        => 'تعديل المشاريع ":name"',
     'show'                        => ' عرض مشروع ":name"',
+    'projects'                  => 'المشاريع',
     'show_project'              => 'عرض المشاريع ',
     'create'            => ' إنشاء مشروع',
     'edit_project'              => ' تعديل المشاريع' ,

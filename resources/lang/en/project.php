@@ -11,7 +11,7 @@ return [
     'edit'                        => 'Edit in ":name" Projects',
     'show'                        => 'Show ":name" Projects',
     'show_project'                => 'Show Projects',
-    'show_project'                => 'Show Projects',
+    'projects'                    => 'Projects',
     'create'                      => 'Create Projects',
     'edit_project'                => 'Edit Projects',
     'create_new_project'          => 'Create New Projects',

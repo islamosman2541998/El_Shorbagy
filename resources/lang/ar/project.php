@@ -11,6 +11,7 @@ return [
     'edit'                        => 'تعديل المشاريع ":name"',
     'show'                        => ' عرض مشروع ":name"',
     'show_project'              => 'عرض المشاريع ',
+    'projects'                  => 'المشاريع',
     'create'            => ' إنشاء مشروع',
     'edit_project'              => ' تعديل المشاريع' ,
     'create_new_project'        => 'إنشاء مشروع جديدة',
