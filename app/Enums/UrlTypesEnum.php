@@ -14,6 +14,10 @@ class UrlTypesEnum
     public const ALLPRODUCT = 'allproducts';
     public const BLOGS = 'blogs';
     public const ALLBLOG = 'all-blogs';
+    public const SERVICES = 'services';
+    public const ALLService = 'all-services';
+    public const PROJECTS = 'projects';
+    public const ALLPROJECT = 'all-projects';
     public const NEWS = 'news';
     public const ALLNEW = 'all-news';
     public const JOBS = 'jobs';
@@ -35,6 +39,10 @@ class UrlTypesEnum
             static::PRODUCTS => 'products',
             static::ALLBLOG => 'all-blogs',
             static::BLOGS => 'blogs',
+            static::ALLService => 'all-services',
+            static::SERVICES => 'services',
+            static::ALLPROJECT => 'all-projects',
+            static::PROJECTS => 'projects',
             static::ALLNEW => 'all-news',
             static::NEWS => 'news',
             static::ALLJOB => 'all-jobs',

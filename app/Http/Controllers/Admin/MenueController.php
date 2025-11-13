@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Enums\MenuPositionEnums;
+use App\Models\Job;
+use App\Models\Blog;
+use App\Models\News;
 use App\Models\Menue;
 use App\Models\Pages;
+use App\Models\Product;
+use App\Models\Services;
 use App\Enums\UrlTypesEnum;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\MenuRequest;
-use App\Models\Blog;
-use App\Models\Job;
-use App\Models\News;
-use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Enums\MenuPositionEnums;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use App\Http\Requests\Admin\MenuRequest;
+use App\Models\Projects;
 
 class MenueController extends Controller
 {
@@ -201,6 +203,18 @@ class MenueController extends Controller
             foreach($items as $item){
                 $res[] =  '/blogs/' . $item->trans->where("locale", app()->getLocale())->first()->slug;
                 // $res[] =  '/blogs/' . $item->id;
+            }
+        }
+        if($name == UrlTypesEnum::SERVICES){
+            $items = Services::query()->with('trans')->get(['id']);
+            foreach($items as $item){
+                $res[] =  '/services/' . $item->trans->where("locale", app()->getLocale())->first()->slug;
+            }
+        }
+        if($name == UrlTypesEnum::PROJECTS){
+            $items = Projects::query()->with('trans')->get(['id']);
+            foreach($items as $item){
+                $res[] =  '/projects/' . $item->trans->where("locale", app()->getLocale())->first()->slug;
             }
         }
         if($name == UrlTypesEnum::NEWS){

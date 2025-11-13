@@ -51,14 +51,7 @@
 
     <div class="collapse navbar-collapse navvv" id="navbarCollapse">
         <div class="navbar-nav mx-auto py-0">
-            {{-- <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="Allservice.html" class="nav-item nav-link">Service</a>
-                <a href="Investment.html" class="nav-item nav-link">Investment</a>
-                <a href="blog.html" class="nav-item nav-link">Blogs</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="news.html" class="nav-item nav-link">News</a>
-                <a href="faq.html" class="nav-item nav-link">Faq</a> --}}
+        
             @php
                 $items = Cache::get('menus');
                 if ($items == null) {
