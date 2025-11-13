@@ -6,7 +6,7 @@
 
 @section('content')
     <!-- ===== HERO ===== -->
-    <section class="hero wow bounceInLeft" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+    <section class="hero py-3 wow bounceInLeft" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
         <div class="container">
             <h1 class="color_blue">@lang('home.faq-index')</h1>
             <p class="breadcrumb"><a href="{{ route('site.home') }}" target="_blank">@lang('home.home')</a> / @lang('home.faq')</p>

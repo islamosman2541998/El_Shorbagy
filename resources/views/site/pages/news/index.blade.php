@@ -18,7 +18,7 @@
             </div>
             <div class="row g-5">
                    @forelse ($news as $new)
-                     <div class="col-lg-4 col-md-6" data-animate="animate__backInRight">
+                     <div class="col-lg-4 col-md-6 pt-3 " data-animate="animate__backInRight">
                          <div class="row g-0">
                              <div class="col-10">
                                  <div class="position-relative newsdiv">

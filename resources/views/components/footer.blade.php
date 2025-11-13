@@ -2,12 +2,12 @@
         $settings = \App\Settings\SettingSingleton::getInstance();
     @endphp
     <!-- Footer Start -->
-    <div class="container-fluid bg-footer bg-primary text-white foodiv">
+    <div class=" footer container-fluid pt-3 bg-footer bg-primary text-white foodiv">
         <div class="container">
             <div class="row gx-5 footerdiv">
                 <div class="col-lg-8 col-md-6">
                     <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3" data-animate="animate__backInLeft">
+                        <div class="col-lg-4 col-md-12 pt-3 pt-lg-5 mb-3" data-animate="animate__backInLeft">
                             <h4 class="text-white mb-4">@lang('admin.quicklinks')</h4>
                             <div class="d-flex flex-column justify-content-start">
                                 @forelse ($footerLinks as $link)
@@ -90,6 +90,12 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 <style>
+ 
+       
+    @media (max-width: 767px) {
+        .footer { margin-top: 35px !important;}
+          
+    }
   [dir=rtl] .footer-social {
     gap: 15px !important;
   }

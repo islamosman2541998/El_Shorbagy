@@ -41,7 +41,7 @@
 <!-- Topbar End -->
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg navbar-dark  py-3 px-lg-5 greenbgwithouthover">
-    <a href="index.html" class="navbar-brand d-flex w-25 h-25">
+    <a href="{{ route('site.home') }}" class="navbar-brand d-flex w-25 h-25">
         <img src="{{ asset($settings->getItem(app()->getLocale() == 'en' ? 'logo_en' : 'logo_ar')) }}" class="imglogo">
     </a>
 
