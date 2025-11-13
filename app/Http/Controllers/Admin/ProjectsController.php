@@ -47,7 +47,7 @@ class ProjectsController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $this->upload_file($request->file('image'), ('project'));
         }
-        $data['protolio_id'] =  Portfolios::first()->id;
+        // $data['protolio_id'] =  Portfolios::first()->id;
         $project = Projects::create($data);
 
         if (@$data['gallery'] != null || @$data['gallery'] != []) {
@@ -89,7 +89,7 @@ class ProjectsController extends Controller
             @unlink($project->image);
             $data['image'] = $this->upload_file($request->file('image'), ('project'));
         }
-        $data['protolio_id'] =  Portfolios::first()->id;
+        // $data['protolio_id'] =  Portfolios::first()->id;
 
         $project->update($data);
         
