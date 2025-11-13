@@ -11,7 +11,7 @@
             {{ str_repeat('ـــ ', $item->level - 1) }}
         @endif
 
-        {{ $item->trans->where('locale', $current_lang)->first()->title }} <br>
+        {{ @$item->trans->where('locale', $current_lang)->first()->title }} <br>
 
     </td>
     <td>
@@ -34,11 +34,11 @@
             </div>
         </div>
     </td>
-    <td>{{ $item->position }}</td>
+    <td>{{ @$item->position }}</td>
 
 
-    <td>{{ $item->created_at }}</td>
-    <td>{{ $item->updated_at }}</td>
+    <td>{{ @$item->created_at }}</td>
+    <td>{{ @$item->updated_at }}</td>
     <td>
         <div class="d-flex justify-content-center">
             @can('admin.menus.update-status')

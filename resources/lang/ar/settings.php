@@ -134,6 +134,12 @@ return [
     'show_reviews' => 'اظهار المراجعات',
     'show_faq' => 'اظهار الاسئلة الشائعة',
     'show_footer' => 'اظهار الفوتر',
+    'show_investments' => 'اظهار الاستثمارات',
+    'show_services' => 'اظهار الخدمات',
+    'show_why_us' => 'اظهار لماذا نحن',
+    'show_statistics' => 'اظهار الاحصاءات',
+   
+
     
     
 

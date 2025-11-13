@@ -135,6 +135,10 @@ return [
     
     'about_us' => 'About Us Page',
     'categories' => 'Categories',
+    'show_services' => 'Show Services',
+    'show_investments' => 'Show Investments',
+    'show_why_us' => 'Show Why Us',
+    'show_statistics' => 'Show Statistics',
 
 
 

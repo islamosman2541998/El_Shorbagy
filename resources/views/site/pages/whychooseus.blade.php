@@ -1,4 +1,8 @@
    @php
+
+    $settings     = \App\Settings\SettingSingleton::getInstance();
+    $show_why_us    = (int) $settings->getHome('show_why_us');
+
     $trans = $whyus->transNow ?? $whyus->translate(app()->getLocale());
     $coreRaw = $trans->core_values ?? [];
 
@@ -14,7 +18,8 @@
     $c4 = $core[3] ?? ['title' => null, 'description' => null];
 @endphp
    
-   <!-- Features Start -->
+@if ($show_why_us)
+     <!-- Features Start -->
     <div class="container-fluid greenbgwithouthover feature  pb-lg-0 my-5">
         <div class="container py-5 pb-lg-0">
             <div class="mx-auto text-center mb-3 pb-2">
@@ -71,3 +76,5 @@
         </div>
     </div>
     <!-- Features Start -->
+@endif
+  

@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title', trans('settings.settings'))
-@section('title_page', trans('settings.edit', ['name' => @$settingMain->key]))
+@section('title_page', trans('settings.home_setting'))
 
 @section('style')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -89,51 +89,80 @@
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label">
-                                                                {{ __('settings.show_product') }}
+                                                                {{ __('settings.show_services') }}
                                                             </label>
                                                             <div class="col-sm-10 d-flex align-items-center">
                                                                 @php
-                                                                    $show_product =
-                                                                        (int) ($settings['show_product'] ?? 0);
+                                                                    $show_services =
+                                                                        (int) ($settings['show_services'] ?? 0);
                                                                 @endphp
 
 
-                                                                <input type="hidden" name="show_product" value="0">
+                                                                <input type="hidden" name="show_services" value="0">
 
                                                                 <!-- Bootstrap Custom Switch -->
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        role="switch" name="show_product" value="1"
-                                                                        id="show_product"
-                                                                        {{ $show_product ? 'checked' : '' }}>
-                                                                    <label class="form-check-label" for="show_product">
+                                                                        role="switch" name="show_services" value="1"
+                                                                        id="show_services"
+                                                                        {{ $show_services ? 'checked' : '' }}>
+                                                                    <label class="form-check-label" for="show_services">
                                                                         <span class="switch-text-on">ON</span>
                                                                         <span class="switch-text-off">OFF</span>
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="row mb-3">
+                                                        {{-- <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label">
-                                                                {{ __('settings.show_category') }}
+                                                                {{ __('settings.show_investments') }}
                                                             </label>
                                                             <div class="col-sm-10 d-flex align-items-center">
                                                                 @php
-                                                                    $show_category =
-                                                                        (int) ($settings['show_category'] ?? 0);
+                                                                    $show_projects =
+                                                                        (int) ($settings['show_projects'] ?? 0);
                                                                 @endphp
 
 
-                                                                <input type="hidden" name="show_category" value="0">
+                                                                <input type="hidden" name="show_projects" value="0">
 
                                                                 <!-- Bootstrap Custom Switch -->
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        role="switch" name="show_category" value="1"
-                                                                        id="show_category"
-                                                                        {{ $show_category ? 'checked' : '' }}>
-                                                                    <label class="form-check-label" for="show_category">
+                                                                        role="switch" name="show_projects" value="1"
+                                                                        id="show_projects"
+                                                                        {{ $show_projects ? 'checked' : '' }}>
+                                                                    <label class="form-check-label" for="show_projects">
+                                                                        <span class="switch-text-on">ON</span>
+                                                                        <span class="switch-text-off">OFF</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div> --}}
+                                                     
+
+                                                  
+                                                   
+                                                        <div class="row mb-3">
+                                                            <label class="col-sm-2 col-form-label">
+                                                                {{ __('settings.show_statistics') }}
+                                                            </label>
+                                                            <div class="col-sm-10 d-flex align-items-center">
+                                                                @php
+                                                                    $show_statistics =
+                                                                        (int) ($settings['show_statistics'] ?? 0);
+                                                                @endphp
+
+
+                                                                <input type="hidden" name="show_statistics" value="0">
+
+                                                                <!-- Bootstrap Custom Switch -->
+                                                                <div class="form-check form-switch">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        role="switch" name="show_statistics" value="1"
+                                                                        id="show_statistics"
+                                                                        {{ $show_statistics ? 'checked' : '' }}>
+                                                                    <label class="form-check-label" for="show_statistics">
                                                                         <span class="switch-text-on">ON</span>
                                                                         <span class="switch-text-off">OFF</span>
                                                                     </label>
@@ -142,24 +171,24 @@
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label">
-                                                                {{ __('settings.show_career') }}
+                                                                {{ __('settings.show_why_us') }}
                                                             </label>
                                                             <div class="col-sm-10 d-flex align-items-center">
                                                                 @php
-                                                                    $show_career =
-                                                                        (int) ($settings['show_career'] ?? 0);
+                                                                    $show_why_us =
+                                                                        (int) ($settings['show_why_us'] ?? 0);
                                                                 @endphp
 
 
-                                                                <input type="hidden" name="show_career" value="0">
+                                                                <input type="hidden" name="show_why_us" value="0">
 
                                                                 <!-- Bootstrap Custom Switch -->
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        role="switch" name="show_career" value="1"
-                                                                        id="show_career"
-                                                                        {{ $show_career ? 'checked' : '' }}>
-                                                                    <label class="form-check-label" for="show_career">
+                                                                        role="switch" name="show_why_us" value="1"
+                                                                        id="show_why_us"
+                                                                        {{ $show_why_us ? 'checked' : '' }}>
+                                                                    <label class="form-check-label" for="show_why_us">
                                                                         <span class="switch-text-on">ON</span>
                                                                         <span class="switch-text-off">OFF</span>
                                                                     </label>
@@ -244,32 +273,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row mb-3">
-                                                            <label class="col-sm-2 col-form-label">
-                                                                {{ __('settings.show_contact_us') }}
-                                                            </label>
-                                                            <div class="col-sm-10 d-flex align-items-center">
-                                                                @php
-                                                                    $show_contact_us =
-                                                                        (int) ($settings['show_contact_us'] ?? 0);
-                                                                @endphp
-
-
-                                                                <input type="hidden" name="show_contact_us" value="0">
-
-                                                                <!-- Bootstrap Custom Switch -->
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        role="switch" name="show_contact_us" value="1"
-                                                                        id="show_contact_us"
-                                                                        {{ $show_contact_us ? 'checked' : '' }}>
-                                                                    <label class="form-check-label" for="show_contact_us">
-                                                                        <span class="switch-text-on">ON</span>
-                                                                        <span class="switch-text-off">OFF</span>
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                      
                                                          <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label">
                                                                 {{ __('settings.show_reviews') }}
@@ -296,32 +300,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                         <div class="row mb-3">
-                                                            <label class="col-sm-2 col-form-label">
-                                                                {{ __('settings.show_faq') }}
-                                                            </label>
-                                                            <div class="col-sm-10 d-flex align-items-center">
-                                                                @php
-                                                                    $show_faq =
-                                                                        (int) ($settings['show_faq'] ?? 0);
-                                                                @endphp
-
-
-                                                                <input type="hidden" name="show_faq" value="0">
-
-                                                                <!-- Bootstrap Custom Switch -->
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        role="switch" name="show_faq" value="1"
-                                                                        id="show_faq"
-                                                                        {{ $show_faq ? 'checked' : '' }}>
-                                                                    <label class="form-check-label" for="show_faq">
-                                                                        <span class="switch-text-on">ON</span>
-                                                                        <span class="switch-text-off">OFF</span>
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                       
                                                          <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label">
                                                                 {{ __('settings.show_footer') }}
