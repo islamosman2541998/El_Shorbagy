@@ -12,8 +12,7 @@
             <div class="projects-alt__head">
                 {{-- <h6 class="eyebrow">Projects</h6> --}}
                 <h2 class="title">@lang('admin.Projects')</h2>
-                {{-- <p class="subtitle">Explore a variety of agricultural ventures designed for sustainable growth and
-                    long-term success.</p> --}}
+                <p class="subtitle">@lang('admin.projects_des')</p>
             </div>
 
             <div class="projects-alt__grid">
@@ -24,7 +23,7 @@
                             <img class="w-50 h-50" src="{{ asset($project->image) }}" alt="">
                         </div>
                         <h3 class="proj-title">{{ @$project->title }} </h3>
-                        <p class="proj-desc"> {!! Str::limit($project->description, 100) !!}</p>
+                        <p class="proj-desc"> {!! Str::limit($project->description, 80) !!}</p>
                         <a href="{{ route('site.projects.show', $project->id) }}" class="proj-link">@lang('home.read_more')<i
                                 class="fa-solid fa-arrow-right"></i></a>
                     </article>

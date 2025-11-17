@@ -67,15 +67,14 @@
                         $url = LaravelLocalization::getLocalizedURL($lang);
                         $isActive = app()->getLocale() === $lang;
                     @endphp
-
                     <a href="{{ $url }}"
                         class="text-white d-inline-flex align-items-center me-3 {{ $isActive ? 'fw-bold text-decoration-underline' : '' }}"
                         rel="alternate" hreflang="{{ $lang }}">
                         @if ($lang == 'en')
-                            {{-- <i class="fa-solid fa-globe me-1"></i> --}}
+                            <i class="fa-solid fa-globe me-1"></i>
                             English
                         @else
-                            {{-- <i class="fa-solid fa-language me-1"></i> --}}
+                            <i class="fa-solid fa-language me-1"></i>
                             عربي
                         @endif
                     </a>
@@ -92,13 +91,13 @@
             @endphp
 
             <a href="{{ $url }}"
-                class="text-white d-inline-flex align-items-center me-3 {{ $isActive ? 'fw-bold text-decoration-underline' : '' }}"
-                rel="alternate" hreflang="{{ $lang }}">
-                @if ($lang == 'en')
-                    {{-- <i class="fa-solid fa-globe me-1"></i> --}}
+                class="text-white d-inline-flex align-items-center me-3 {{ $isActive ? 'fw-bold text-decoration-underline' : '' }}" 
+                rel="alternate" hreflang="{{ $lang }}"> 
+                @if ($lang == 'en') 
+                    <i class="fa-solid fa-globe me-1"></i>
                     English
                 @else
-                    {{-- <i class="fa-solid fa-language me-1"></i> --}}
+                    <i class="fa-solid fa-language me-1"></i>
                     عربي
                 @endif
             </a>
@@ -109,6 +108,12 @@
 <!-- Navbar End -->
 
 <style>
+@media (min-width: 993px) and (max-width: 1024px) {
+  .navbar-collapse .navvv {
+
+    margin-left: 0 !important;
+  }
+}
     .navbar .d-flex a {
         z-index: 10000 !important;
     }

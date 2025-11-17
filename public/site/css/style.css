@@ -479,8 +479,16 @@
 .bgContent {
     text-align: start;
     margin-top: -7rem;
-    margin-right: 15rem;
+    margin-right: auto;
     max-width: 900px;
+
+}
+[dir=rtl] .bgContent {
+ 
+    margin-left: auto !important;
+        margin-right: 0 !important;
+
+    
 
 }
 
@@ -2101,7 +2109,9 @@
   display: block;
 }
 @media (min-width: 992px){
-  .imglogo{ height: 64px; } /* For desktop */
+  .imglogo{
+     height: 44px; 
+    } /* For desktop */
 }
 @media (max-width: 991.98px){
   .navbar-nav{ padding-left: 0 !important; }
@@ -2131,7 +2141,7 @@
 
 @media (min-width: 992px){
   .navbar-collapse.navvv{
-     /* margin-left: 0;  */
+     margin-left: 0; 
   
      
     } 
@@ -2140,6 +2150,14 @@
      margin:  auto !important;
      
     } 
+}
+
+@media (min-width: 1224px){
+  .navbar-collapse.navvv{
+        margin-right: 132px;  
+     
+    } 
+ 
 }
 
 /*fooooter*/

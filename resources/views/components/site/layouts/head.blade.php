@@ -71,7 +71,7 @@
     <link rel="stylesheet" href="{{ asset('site/css/swiper.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('site/css/bootstrap.min.css') }}" />
 
-    <link rel="stylesheet" href="{{ asset('site/css/style.css?v=0.0.10') }}" />
+    <link rel="stylesheet" href="{{ asset('site/css/style.css?v=0.0.10?v=0.0.1') }}" />
 
 
     {!! \App\Settings\SettingSingleton::getInstance()->getScript('header_script') !!}

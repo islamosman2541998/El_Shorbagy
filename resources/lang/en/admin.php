@@ -565,14 +565,17 @@ return [
     'attachment' => 'Attachment',
     'serviceRequest' => 'Service Request',
     'why_choose_us' => 'Why Choose Us',
-    'projects' => 'Projects',
+    'projects_des' => 'Explore a variety of agricultural ventures designed for sustainable growth and
+ long-term success.',
+    'projects' => ' Projects',
+
     'about-us' => 'About-us',
     'contact-us' => 'Contact-us',
     'see_more' => 'See More',
     'quicklinks' => 'Quick Links',
     'popular_projects' => 'Popular Projects',
    'get_in_touch' => 'Get In Touch',
-   'Projects' => 'Projects',
+   'Projects' => 'Our Projects',
     
 
 
