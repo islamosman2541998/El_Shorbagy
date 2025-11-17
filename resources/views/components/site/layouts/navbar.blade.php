@@ -17,7 +17,7 @@
         </div>
         <div class="col-lg-6">
             <div class="d-flex align-items-center justify-content-center">
-                <a href="index.html" class="navbar-brand ms-lg-5">
+                <a href="{{ route('site.home') }}" class="navbar-brand ms-lg-5">
                     <h1 class="m-0 display-4 greenColor"><span
                             class="brownColor">{{ $settings->getItem(val: 'site_name') }} </span>
                         {{ $settings->getItem(val: 'site_name_lower') }}</h1>
