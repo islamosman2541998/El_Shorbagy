@@ -20,7 +20,7 @@
                 @forelse ($projects as $project)
                     <article class="proj-card" data-animate="animate__backInLeft">
                         <div class="icon">
-                            <img class="w-50 h-50" src="{{ asset($project->image) }}" alt="">
+                            <img class="w-50 h-50" src="{{ asset($project->icon_image) }}" alt="">
                         </div>
                         <h3 class="proj-title">{{ @$project->title }} </h3>
                         <p class="proj-desc"> {!! Str::limit($project->description, 80) !!}</p>
