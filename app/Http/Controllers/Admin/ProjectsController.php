@@ -47,6 +47,9 @@ class ProjectsController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $this->upload_file($request->file('image'), ('project'));
         }
+        if ($request->hasFile('icon_image')) {
+            $data['icon_image'] = $this->upload_file($request->file('icon_image'), ('project'));
+        }
         // $data['protolio_id'] =  Portfolios::first()->id;
         $project = Projects::create($data);
 
@@ -63,7 +66,9 @@ class ProjectsController extends Controller
                
             }
             $data['image'] = $this->upload_file($request->file('image'), ('project'));
+            $data['icon_image'] = $this->upload_file($request->file('icon_image'), ('project'));
         }
+
 
         session()->flash('success', trans('message.admin.created_sucessfully'));
         return back();
@@ -88,6 +93,10 @@ class ProjectsController extends Controller
         if ($request->hasFile('image')) {
             @unlink($project->image);
             $data['image'] = $this->upload_file($request->file('image'), ('project'));
+        }
+        if ($request->hasFile('icon_image')) {
+            @unlink($project->icon_image);
+            $data['icon_image'] = $this->upload_file($request->file('icon_image'), ('project'));
         }
         // $data['protolio_id'] =  Portfolios::first()->id;
 

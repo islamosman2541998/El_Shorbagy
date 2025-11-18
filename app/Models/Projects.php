@@ -13,6 +13,7 @@ class Projects extends Model
 
     protected $fillable = [
         'portfolio_id',
+        'icon_image',
         'image',
         'sort',
         'status',

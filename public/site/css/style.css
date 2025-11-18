@@ -644,7 +644,7 @@
 
 .proj-desc {
     color: #6b6b6b;
-    font-size: .95rem;
+    font-size: .8rem;
     line-height: 1.5;
     margin: 0 0 14px;
 }
@@ -1174,14 +1174,14 @@
     box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
 }
 
-.blog-hero::after {
+/* .blog-hero::after {
     content: "";
     position: absolute;
     inset: auto 0 0 0;
     height: 4px;
     background: linear-gradient(90deg, #8b5e34, #2e8b57);
     opacity: .9;
-}
+} */
 
 .blog-title {
     margin: 0 0 6px;

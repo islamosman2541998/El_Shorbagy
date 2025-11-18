@@ -28,6 +28,9 @@ class ProjectsRequest extends FormRequest
         $this->isMethod('POST') ?
                 $req += ['image' =>'required|' . ImageValidate()] :
                 $req += ['image' =>'nullable|' . ImageValidate()];
+                $this->isMethod('POST') ?
+                $req += ['icon_image' =>'required|' . ImageValidate()] :
+                $req += ['icon_image' =>'nullable|' . ImageValidate()];
 
         $req += ['portfolio_id' =>'nullable'];
         $req += ['status' =>'nullable'];

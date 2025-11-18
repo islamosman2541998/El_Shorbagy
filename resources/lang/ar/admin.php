@@ -592,6 +592,7 @@ return [
     'popular_projects' => 'المشاريع الشائعة',
     'get_in_touch' => 'اتصل بنا',
     'Projects' => 'المشاريع',
+    'icon_image' => 'صورة الايقونة',
    
 
 

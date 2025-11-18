@@ -576,6 +576,7 @@ return [
     'popular_projects' => 'Popular Projects',
    'get_in_touch' => 'Get In Touch',
    'Projects' => 'Our Projects',
+   'icon_image' => 'Icon Image',
     
 
 

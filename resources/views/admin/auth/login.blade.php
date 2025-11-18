@@ -60,19 +60,19 @@
                                 @include('admin.layouts.message')
                             </div>
                             <div class="p-3">
-                                <h4 class="text-center">@lang('admin.welcome_back') </h4>
-                                <p class="text-muted text-center mb-4" style="color:{{  @$adminLoginTheme->font_color  }} !important"> @lang('admin.sign_in') </p>
+                                <h4 class="text-center text-white">@lang('admin.welcome_back') </h4>
+                                <p class="text-white text-center mb-4" style="color:{{  @$adminLoginTheme->font_color  }} !important"> @lang('admin.sign_in') </p>
 
                                 <form class="form-horizontal" method="POST" action="{{ route('admin.post-login') }}">
                                     @csrf
                                     <div class="mb-3">
-                                        <label class="form-label" for="username"> @lang('admin.email') </label>
+                                        <label class="form-label text-white" for="username"> @lang('admin.email') </label>
                                         <input id="email" class="form-control" type="email" name="email"
                                             value="{{ old('email') }}" required autofocus>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="userpassword"> @lang('admin.password') </label>
+                                        <label class="form-label text-white" for="userpassword"> @lang('admin.password') </label>
                                         <input id="password" class="form-control" type="password" name="password"
                                             required autocomplete="current-password">
                                     </div>

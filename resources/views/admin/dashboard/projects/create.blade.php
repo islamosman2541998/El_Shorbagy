@@ -161,7 +161,7 @@
                                     </div>
                                     <!----------end meta ---------->
                                     {{-- images Gellary  --}}
-                                    <div class="accordion mt-4 mb-4" id="accordionExample">
+                                    {{-- <div class="accordion mt-4 mb-4" id="accordionExample">
                                         <div class="accordion-item border rounded">
                                             <h2 class="accordion-header" id="headingImage">
                                                 <button class="accordion-button fw-medium" type="button"
@@ -185,7 +185,7 @@
                                             </div>
                                         </div>
 
-                                    </div>
+                                    </div> --}}
 
                                 </div>
 
@@ -215,6 +215,19 @@
                                                                     placeholder="@lang('admin.image'):"
                                                                     id="example-number-input" name="image"
                                                                     value="{{ old('image') }}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{-- icon_image ------------------------------------------------------------------------------------- --}}
+                                                    <div class="col-12">
+                                                        <div class="row mb-3">
+                                                            <label for="example-number-input" col-form-label>
+                                                                @lang('admin.icon_image'):</label>
+                                                            <div class="col-sm-12">
+                                                                <input class="form-control" type="file" required
+                                                                    placeholder="@lang('admin.icon_image'):"
+                                                                    id="example-number-input" name="icon_image"
+                                                                    value="{{ old('icon_image') }}">
                                                             </div>
                                                         </div>
                                                     </div>

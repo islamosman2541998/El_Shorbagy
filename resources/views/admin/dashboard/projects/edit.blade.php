@@ -372,6 +372,26 @@
                                                             </div>
                                                         </div>
 
+                                                         <div class="col-sm-3 col-md-6 mb-3">
+                                                            @if ($project->icon_image != null)
+                                                                <img src="{{ asset($project->icon_image) }}" alt=""
+                                                                    style="width:100%">
+                                                            @endif
+                                                        </div>
+                                                        {{-- icon_image ------------------------------------------------------------------------------------- --}}
+                                                        <div class="col-12">
+                                                            <div class="row mb-3">
+                                                                <label for="example-number-input" col-form-label>
+                                                                    @lang('admin.icon_image'):</label>
+                                                                <div class="col-sm-12">
+                                                                    <input class="form-control" type="file"
+                                                                        placeholder="@lang('admin.icon_image'):"
+                                                                        id="example-number-input" name="icon_image"
+                                                                        value="{{ old('icon_image') }}">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                         {{-- sort ------------------------------------------------------------------------------------- --}}
                                                         <div class="col-12">
                                                             <div class="row mb-3">
