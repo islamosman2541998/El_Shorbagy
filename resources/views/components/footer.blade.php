@@ -84,7 +84,7 @@
     </div>
     <!-- Footer End -->
     <!-- wp icon -->
-    <a href="https://wa.me/2{{ $settings->getItem('mobile') }}" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/2{{ $settings->getItem('whatsapp') }}" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="bi bi-whatsapp"></i>
     </a>
     <!-- Back to Top -->
