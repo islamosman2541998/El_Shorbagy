@@ -209,7 +209,6 @@ document.querySelectorAll('.faq-toggle').forEach((btn)=>{
   var navCollapse = document.getElementById('navbarCollapse');
   if (!navCollapse) return;
 
-  // اقفل القايمة عند الضغط على أي رابط داخلها
   var navLinks = navCollapse.querySelectorAll('.nav-link, .lang-switch a');
   navLinks.forEach(function (lnk) {
     lnk.addEventListener('click', function () {
@@ -220,7 +219,6 @@ document.querySelectorAll('.faq-toggle').forEach((btn)=>{
     });
   });
 
-  // اقفل القايمة لو كبست برّة الناف
   document.addEventListener('click', function (e) {
     var nav = document.querySelector('.navbar');
     if (!nav) return;
@@ -233,7 +231,6 @@ document.querySelectorAll('.faq-toggle').forEach((btn)=>{
     }
   });
 
-  // اختيارية: بدّل أيقونة التوجل (لو حابة)
   var toggler = document.querySelector('.navbar-toggler');
   if (toggler) {
     navCollapse.addEventListener('shown.bs.collapse', function(){ toggler.classList.add('is-open'); });

@@ -139,10 +139,10 @@
                                                                 </div>
                                                             </div>
                                                         </div> --}}
-                                                     
 
-                                                  
-                                                   
+
+
+
                                                         <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label">
                                                                 {{ __('settings.show_statistics') }}
@@ -201,8 +201,7 @@
                                                             </label>
                                                             <div class="col-sm-10 d-flex align-items-center">
                                                                 @php
-                                                                    $show_blogs =
-                                                                        (int) ($settings['show_blogs'] ?? 0);
+                                                                    $show_blogs = (int) ($settings['show_blogs'] ?? 0);
                                                                 @endphp
 
 
@@ -232,13 +231,14 @@
                                                                 @endphp
 
 
-                                                                <input type="hidden" name="show_partners" value="0">
+                                                                <input type="hidden" name="show_partners"
+                                                                    value="0">
 
                                                                 <!-- Bootstrap Custom Switch -->
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        role="switch" name="show_partners" value="1"
-                                                                        id="show_partners"
+                                                                        role="switch" name="show_partners"
+                                                                        value="1" id="show_partners"
                                                                         {{ $show_partners ? 'checked' : '' }}>
                                                                     <label class="form-check-label" for="show_partners">
                                                                         <span class="switch-text-on">ON</span>
@@ -253,8 +253,7 @@
                                                             </label>
                                                             <div class="col-sm-10 d-flex align-items-center">
                                                                 @php
-                                                                    $show_news =
-                                                                        (int) ($settings['show_news'] ?? 0);
+                                                                    $show_news = (int) ($settings['show_news'] ?? 0);
                                                                 @endphp
 
 
@@ -264,8 +263,7 @@
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="checkbox"
                                                                         role="switch" name="show_news" value="1"
-                                                                        id="show_news"
-                                                                        {{ $show_news ? 'checked' : '' }}>
+                                                                        id="show_news" {{ $show_news ? 'checked' : '' }}>
                                                                     <label class="form-check-label" for="show_news">
                                                                         <span class="switch-text-on">ON</span>
                                                                         <span class="switch-text-off">OFF</span>
@@ -273,8 +271,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                      
-                                                         <div class="row mb-3">
+
+                                                        <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label">
                                                                 {{ __('settings.show_reviews') }}
                                                             </label>
@@ -300,8 +298,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                       
-                                                         <div class="row mb-3">
+
+                                                        <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label">
                                                                 {{ __('settings.show_footer') }}
                                                             </label>

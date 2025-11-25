@@ -10,7 +10,7 @@
         <div class="container">
             <div class="mx-auto text-center mb-5 BlogDiv">
                 {{-- <h6 class="text-primary text-uppercase">Our Blog</h6> --}}
-                <h1 class="display-5">Latest Articles From Our Blog Post</h1>
+                <h1 class="display-5">@lang('blogs.latest_blogs')</h1>
             </div>
             <div class="row g-5">
                 @forelse ($blogs as $blog)
