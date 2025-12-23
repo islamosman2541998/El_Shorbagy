@@ -13,7 +13,7 @@ class AboutController extends Controller
     {
 
         $about_us = About::with('translations')->first();
-                $statistics = Statistic::with('transNow')->feature()->active()->orderBy('sort','ASC')->get();    
+        $statistics = Statistic::with('transNow')->feature()->active()->orderBy('sort', 'ASC')->get();
 
         $trans = $about_us->translate(app()->getLocale()) ?? $about_us->translate(config('app.fallback_locale'));
         $coreValues = [];

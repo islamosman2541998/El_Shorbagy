@@ -66,7 +66,6 @@
   transform-origin: center;
 }
 
-/* لو الكلاس مضاف عند العربية: عكس أفقى للصورة */
 .flip-rtl {
   transform: scaleX(-1);
 }
