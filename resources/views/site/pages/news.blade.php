@@ -20,7 +20,7 @@
                                      <img class="img-fluid w-100" src="{{ asset($new->image) }}" alt="">
                                      <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4 newcontent">
                                          <h4 class="text-white">{{ $new->title ?? 'No Title' }}</h4>
-                                         <span class="text-white">{!! Str::limit($new->description, 200) !!}</span>
+                                         <span class="text-white">{!! Str::limit($new->description, 70) !!}</span>
                                          <span>{{ $new->created_at ?? 'No Date' }}</span>
                                          <a href="{{ route('site.news.show', $new->id) }}"><span>@lang('home.read_more')</span></a>
                                      </div>
