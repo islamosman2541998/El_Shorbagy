@@ -17,6 +17,8 @@ class SliderTranslation extends Model
         'title',
         'slug',
         'description',
+        'sub_desc1',
+        'sub_desc2',
     ];
 
 

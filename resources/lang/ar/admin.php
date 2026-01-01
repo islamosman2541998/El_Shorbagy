@@ -593,6 +593,8 @@ return [
     'get_in_touch' => 'اتصل بنا',
     'Projects' => 'المشاريع',
     'icon_image' => 'صورة الايقونة',
+    'sub_desc1_ar' => 'وصف فرعي 1',
+    'sub_desc2_ar' => 'وصف فرعي 2',
    
 
 

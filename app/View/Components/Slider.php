@@ -14,7 +14,7 @@ class Slider extends Component
     {
        $this->slides = ModelsSlider::active()
         ->orderBy('sort', 'ASC')
-        ->get(['id','image','video','url','sort']);
+        ->get();
     }
 
     public function render()

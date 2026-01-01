@@ -251,3 +251,13 @@ document.querySelectorAll('.faq-toggle').forEach((btn)=>{
     },
 });
 
+ window.addEventListener("load", function () {
+    var modalEl = document.getElementById("whatsModal");
+    if (!modalEl) return;
+
+    var modal = new bootstrap.Modal(modalEl);
+
+    setTimeout(function () {
+      modal.show();
+    }, 800);
+  });

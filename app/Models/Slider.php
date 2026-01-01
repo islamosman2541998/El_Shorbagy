@@ -12,7 +12,7 @@ class Slider extends Model
 {
     use HasFactory, SoftDeletes;
     use Translatable;
-    public $translatedAttributes = ['title','slug','description','slider_id','locale',];
+    public $translatedAttributes = ['title','slug','description','sub_desc1', 'sub_desc2', 'slider_id','locale',];
     protected $fillable = [
         'url',
         'sort',

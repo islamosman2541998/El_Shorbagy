@@ -15,17 +15,34 @@
                 <p class="subtitle">@lang('admin.projects_des')</p>
             </div>
 
-            <div class="projects-alt__grid">
+            <div class="news-list">
                 <!-- Item -->
                 @forelse ($projects as $project)
-                    <article class="proj-card" data-animate="animate__backInLeft">
-                        <div class="icon">
-                            <img class="w-50 h-50" src="{{ asset($project->icon_image) }}" alt="">
+                 
+
+                    <article class="news-item" data-animate="animate__fadeInUp">
+                        <div class="row g-0 align-items-stretch">
+                            <!-- Image -->
+                            <div class="col-lg-5 newsImages">
+                                <a href="#" class="news-media">
+                                    <img src="{{ asset($project->image) }}" class="img-fluid" alt="Irrigation Systems">
+                                </a>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="col-lg-7">
+                                <div class="news-body">
+                                    <h3 class="news-title">
+                                        <p>{{ @$project->title }}</p>
+                                    </h3>
+
+                                    <p class="news-excerpt">
+                                       {!! $project->description !!} </p>
+
+
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="proj-title">{{ @$project->title }} </h3>
-                        <p class="proj-desc"> {!! Str::limit($project->description, 80) !!}</p>
-                        <a href="{{ route('site.projects.show', $project->id) }}" class="proj-link">@lang('home.read_more')<i
-                                class="fa-solid fa-arrow-right"></i></a>
                     </article>
                 @empty
                     <p>No projects available</p>
@@ -42,40 +59,39 @@
 
     <!-- Products End -->
 
-    <!-- why-us -->
-    @include('site.pages.whychooseus')
 
 
-    <!-- ========== FAQ / Accordion ========== -->
-    <section class="faq-section">
-        <div class="faq-head">
-            <h2 class="greenColor">@lang('home.faq')</h2>
-            {{-- <p class="sub brownColor">Still have a question? We’re here to help.</p> --}}
-        </div>
 
-        <div class="faq-list" role="list">
-            <!-- 1 -->
-            @forelse ($faq_questions as $key => $question)
-                <div class="faq-item" role="listitem">
-                    <button class="faq-toggle" aria-expanded="false" aria-controls="faq-1" id="btn-faq-1">
-                        <span class="faq-q">{{ $question->question }}</span>
-                        <span class="faq-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="faq-panel" id="faq-1" role="region" aria-labelledby="btn-faq-1">
-                        {{ $question->answer }}
-                    </div>
-                </div>
-            @empty
-                <p>@lang('home.no_faq')</p>
-            @endforelse
-
-        </div>
-    </section>
-
-
-       <!-- our-partner -->
+    <!-- our-partner -->
     @include('site.pages.our-partner')
+    <!-- WhatsApp Popup Modal -->
+    <div class="modal fade" id="whatsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:16px; overflow:hidden;">
 
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold wppopup">Need help?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body pt-2">
+                    <p class="mb-3 text-muted">
+                        Chat with us on WhatsApp for investment details, pricing, and partnerships.
+                    </p>
+
+                    <a class="btn svc-btn w-100 py-2" target="_blank"
+                        href="https://wa.me/201055857775?text=Hello%20I%20want%20to%20know%20more%20about%20your%20agricultural%20projects">
+                        Open WhatsApp
+                    </a>
+
+                    <small class="d-block text-center mt-3 text-muted">
+                        We typically reply within minutes.
+                    </small>
+                </div>
+
+            </div>
+        </div>
+    </div>
 @endsection
 
 <style>

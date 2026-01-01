@@ -100,6 +100,50 @@
                                                                 </script>
 
                                                             </div>
+                                                            {{-- sub_desc1 ------------------------------------------------------------------------------------- --}}
+                                                            <div class="row mb-3">
+                                                                <label for="example-text-input"
+                                                                    class="col-sm-2 col-form-label">{{ trans('admin.sub_desc1_in') . trans('lang.' . Locale::getDisplayName($locale)) }}
+                                                                </label>
+                                                                <div class="col-sm-10 mb-2">
+                                                                    <textarea id="sub_desc1{{ $key }}" name="{{ $locale }}[sub_desc1]" class="form-control"
+                                                                        rows="4"> {{ @$slider->trans->where('locale', $locale)->first()->sub_desc1 }} </textarea>
+                                                                    @if ($errors->has($locale . '.sub_desc1'))
+                                                                        <span
+                                                                            class="missiong-spam">{{ $errors->first($locale . '.sub_desc1') }}</span>
+                                                                    @endif
+                                                                </div>
+
+                                                                <script type="text/javascript">
+                                                                    $(function() {
+                                                                        CKEDITOR.replace('sub_desc1{{ $key }}');
+                                                                        $('.textarea').wysihtml5()
+                                                                    })
+                                                                </script>
+
+                                                            </div>
+                                                            {{-- sub_desc2 ------------------------------------------------------------------------------------- --}}
+                                                            <div class="row mb-3">
+                                                                <label for="example-text-input"
+                                                                    class="col-sm-2 col-form-label">{{ trans('admin.sub_desc2_in') . trans('lang.' . Locale::getDisplayName($locale)) }}
+                                                                </label>
+                                                                <div class="col-sm-10 mb-2">
+                                                                    <textarea id="sub_desc2{{ $key }}" name="{{ $locale }}[sub_desc2]" class="form-control"
+                                                                        rows="4"> {{ @$slider->trans->where('locale', $locale)->first()->sub_desc2 }} </textarea>
+                                                                    @if ($errors->has($locale . '.sub_desc2'))
+                                                                        <span
+                                                                            class="missiong-spam">{{ $errors->first($locale . '.sub_desc2') }}</span>
+                                                                    @endif
+                                                                </div>
+
+                                                                <script type="text/javascript">
+                                                                    $(function() {
+                                                                        CKEDITOR.replace('sub_desc2{{ $key }}');
+                                                                        $('.textarea').wysihtml5()
+                                                                    })
+                                                                </script>
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

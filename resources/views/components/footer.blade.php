@@ -85,7 +85,7 @@
     <!-- Footer End -->
     <!-- wp icon -->
     <a href="https://wa.me/2{{ $settings->getItem('whatsapp') }}" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="bi bi-whatsapp"></i>
+        <i class="bi bi-whatsapp mt-3 "></i>
     </a>
     <!-- Back to Top -->
     <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
@@ -99,4 +99,8 @@
   [dir=rtl] .footer-social {
     gap: 15px !important;
   }
+  .bi-whatsapp::before {
+    content: "\f618";
+    margin-top: 13px !important;
+}
 </style>

@@ -29,7 +29,7 @@ return [
 
     'status_changed_sucessfully'  => 'Status Changed Sucessfully',
     'delete_all_sucessfully'      => 'Articles Deleted Sucessfully',
-    'our_news'                    => 'Our News',
+    'our_news'                    => 'Latest from Our News',
 
 ];
 

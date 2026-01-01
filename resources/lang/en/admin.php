@@ -575,8 +575,10 @@ return [
     'quicklinks' => 'Quick Links',
     'popular_projects' => 'Popular Projects',
    'get_in_touch' => 'Get In Touch',
-   'Projects' => 'Our Projects',
+   'Projects' => 'Our Agricultural Projects',
    'icon_image' => 'Icon Image',
+    'sub_desc1_in' => 'Sub Description 1 in',
+    'sub_desc2_in' => 'Sub Description 2 in ',
     
 
 

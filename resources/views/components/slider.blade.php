@@ -40,16 +40,15 @@
         <div class="row gx-0">
             <div class="col-md-6 ">
                 <div class=" bg-vegetable d-flex flex-column justify-content-center p-5 bannerDiv">
-                    <h3 class="text-white mb-3">@lang('home.navtitle1')</h3>
-                    <p class="text-white">@lang('home.navdes1')</p>
+                    <span class="text-white sub_desc1">{!! $slide->transNow->sub_desc1 ?? 'No Description' !!}</span>
                     <a class="text-white fw-bold" href="{{ route('site.projects.index') }}">@lang('home.read_more')<i
                             class="bi bi-arrow-right ms-2"></i></a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class=" bg-fruit d-flex flex-column justify-content-center p-5 bannerDiv">
-                    <h3 class="text-white mb-3"> @lang('home.navtitle2')</h3>
-                    <p class="text-white">@lang('home.navdes2')</p>
+                    <span class="text-white sub_desc2">{!! $slide->transNow->sub_desc2 ?? 'No Description' !!}</span>
+
                     <a class="text-white fw-bold" href="{{ route('site.projects.index') }}">@lang('home.read_more')<i
                             class="bi bi-arrow-right ms-2"></i></a>
                 </div>
@@ -60,15 +59,15 @@
 <!-- Banner End -->
 
 <style>
-
     .slide-img {
-  transition: transform .25s ease;
-  transform-origin: center;
-}
+        transition: transform .25s ease;
+        transform-origin: center;
+    }
 
-.flip-rtl {
-  transform: scaleX(-1);
-}
+    .flip-rtl {
+        transform: scaleX(-1);
+    }
+
     @media (max-width: 780px) {
         .display-1 {
             font-size: 20px !important;
@@ -79,5 +78,9 @@
     .swiper-button-next,
     .swiper-button-prev {
         color: #60d1af !important;
+    }
+
+    .bg-fruit p {
+        color: #ffffff !important;
     }
 </style>

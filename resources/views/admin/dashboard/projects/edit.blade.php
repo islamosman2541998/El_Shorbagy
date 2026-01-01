@@ -372,14 +372,14 @@
                                                             </div>
                                                         </div>
 
-                                                         <div class="col-sm-3 col-md-6 mb-3">
+                                                         {{-- <div class="col-sm-3 col-md-6 mb-3">
                                                             @if ($project->icon_image != null)
                                                                 <img src="{{ asset($project->icon_image) }}" alt=""
                                                                     style="width:100%">
                                                             @endif
-                                                        </div>
+                                                        </div> --}}
                                                         {{-- icon_image ------------------------------------------------------------------------------------- --}}
-                                                        <div class="col-12">
+                                                        {{-- <div class="col-12">
                                                             <div class="row mb-3">
                                                                 <label for="example-number-input" col-form-label>
                                                                     @lang('admin.icon_image'):</label>
@@ -390,7 +390,7 @@
                                                                         value="{{ old('icon_image') }}">
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> --}}
 
                                                         {{-- sort ------------------------------------------------------------------------------------- --}}
                                                         <div class="col-12">

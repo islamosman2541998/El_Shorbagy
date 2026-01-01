@@ -26,6 +26,8 @@ class SliderStoreRequest extends FormRequest
             $attr += [$locale . '.title' => 'Title ' . Locale::getDisplayName($locale)];
             $attr += [$locale . '.slug' => 'Slug ' . Locale::getDisplayName($locale)];
             $attr += [$locale . '.description' => 'Description ' . Locale::getDisplayName($locale)];
+            $attr += [$locale . '.sub_desc1' => 'Sub Description 1 ' . Locale::getDisplayName($locale)];
+            $attr += [$locale . '.sub_desc2' => 'Sub Description 2 ' . Locale::getDisplayName($locale)];
         }
         $attr += ['image' => 'Image'];
         $attr += ['video' => 'Video'];
@@ -42,6 +44,8 @@ class SliderStoreRequest extends FormRequest
             $req += [$locale . '.title' => 'required'];
             $req += [$locale . '.slug' => 'nullable'];
             $req += [$locale . '.description' => 'nullable'];
+            $req += [$locale . '.sub_desc1' => 'nullable'];
+            $req += [$locale . '.sub_desc2' => 'nullable'];
         }
         $this->isMethod('POST') ?
             $req += ['image' => 'nullable|' . ImageValidate()]

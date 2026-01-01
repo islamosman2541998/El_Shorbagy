@@ -219,7 +219,7 @@
                                                         </div>
                                                     </div>
                                                     {{-- icon_image ------------------------------------------------------------------------------------- --}}
-                                                    <div class="col-12">
+                                                    {{-- <div class="col-12">
                                                         <div class="row mb-3">
                                                             <label for="example-number-input" col-form-label>
                                                                 @lang('admin.icon_image'):</label>
@@ -230,7 +230,7 @@
                                                                     value="{{ old('icon_image') }}">
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
 
                                                     {{-- sort ------------------------------------------------------------------------------------- --}}
                                                     <div class="col-12">
