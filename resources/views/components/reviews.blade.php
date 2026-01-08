@@ -10,7 +10,7 @@
         <div class="container">
             <div class="testi-head">
                 {{-- <h6 class="eyebrow">Testimonials</h6> --}}
-                <h2 class="title">What Our Clients Say</h2>
+                <h2 class="brownColor">@lang('admin.what_clients_say')</h2>
             </div>
             <div class="swiper ReviewSlider">
                 <div class="swiper-wrapper">

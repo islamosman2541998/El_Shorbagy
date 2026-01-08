@@ -12,9 +12,9 @@
                 <div class="col-lg-4 col-md-6" data-animate="animate__fadeInLeft">
                     <div class="mb-3">
                         {{-- <h6 class="greenColor text-uppercase">Services</h6> --}}
-                        <h1 class="display-5 brownColor"> @lang('home.Services')</h1>
+                        <h1 class="display-5 brownColor">{{ $home_page_settings->transNow->title }}</h1>
                     </div>
-                    <p class="mb-4 about_P">@lang('home.services_description')</p>
+                    <p class="mb-4 about_P">{!! $home_page_settings->transNow->description !!}</p>
                 </div>
                 @forelse ($services as $service)
                     <div class="col-lg-4 col-md-6" data-animate="animate__fadeInLeft">

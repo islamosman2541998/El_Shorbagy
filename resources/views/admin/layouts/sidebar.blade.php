@@ -559,9 +559,9 @@
                                 {{-- <li><a href="{{ route('admin.payment-methods.index') }}"> @lang('admin.payment_methods')</a>
                                 </li> --}}
 
-                                {{-- <li>
+                                <li>
                                     <a href="{{ route('admin.home-settings.index') }}"> @lang('admin.setting_home')</a>
-                                </li> --}}
+                                </li> 
                             </ul>
                         </li>
                         {{-- Themes --------------------------------------------------------------- --}}

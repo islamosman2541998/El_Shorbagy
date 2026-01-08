@@ -16,7 +16,6 @@ return [
     'home' => 'Home',
     'faq-index' => 'Frequently Asked Questions',
     'faq-index_h3' => 'Need more help?',
-    'faq-index_pp' => 'We’d be happy to help you find the right product or ensure your safety.',
     'contact' => 'Contact',
     'read' => 'Read our blog',
     'questions' => '  Got Some <em>Questions</em> for Us?<br/>
@@ -47,4 +46,6 @@ return [
     'services_description' => 'End-to-end solutions from feasibility to market access—balancing returns and
                         sustainability to secure your farm project’s success.',
     'Services' => 'Services',
+    'faq-index_pp' => 'our team is here to assist you',
+    
 ];

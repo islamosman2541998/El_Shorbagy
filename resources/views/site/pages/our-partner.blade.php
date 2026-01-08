@@ -6,7 +6,7 @@
 @if ($show_partners)
     <!-- partner  -->
     <section class="OurPartner">
-        <h3 class="PartnerH3">Our Partners</h3>
+        <h3 class=" brownColor">Our Partners</h3>
 
         <div class="parner">
             <div class="partnercompanies">

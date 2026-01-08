@@ -10,16 +10,16 @@
         <div class="container">
             <div class="mx-auto text-center mb-5 BlogDiv">
                 {{-- <h6 class="text-primary text-uppercase">Our Blog</h6> --}}
-                <h1 class="display-5">@lang('blogs.latest_blogs')</h1>
+                <h1 class="display-5 brownColor">@lang('blogs.latest_blogs')</h1>
             </div>
             <div class="row g-5">
                 @forelse ($blogs as $blog)
                 <div class="col-lg-4" data-animate="animate__backInRight">
                     <div class="blog-item position-relative overflow-hidden blogs">
                         <img class="img-fluid blogImg" src="{{ asset($blog->pathInView()) }}" alt="">
-                        <a class="blog-overlay" href="./singleblog.html">
+                        <a class="blog-overlay" href="{{ route('site.site.blogs.show', $blog->id) }}">
                             <h4 class="text-white">{{ $blog->title }}</h4>
-                            <span class="text-white fw-bold">{{ $blog->created_at }}</span>
+                            {{-- <span class="text-white fw-bold">{{ $blog->created_at }}</span> --}}
                             <span>@lang('home.read_more')</span>
                         </a>
                     </div>

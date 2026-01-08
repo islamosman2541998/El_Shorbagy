@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-lg-6 pb-5 " data-animate="animate__fadeInRight">
                     <div class="mb-3 pb-2">
-                        <h6 class=" text-uppercase greenColor">{{ $about_us->transNow->subtitle ?? 'El shorbagy ' }}</h6>
+                        {{-- <h6 class=" text-uppercase greenColor">{{ $about_us->transNow->subtitle ?? 'El shorbagy ' }}</h6> --}}
                         <h1 class="display-5 brownColor">{{ $about_us->transNow->title ?? 'About Us' }}</h1>
                     </div>
                     <p class="mb-4 about_P">{!! $about_us->transNow->description ?? 'No description available' !!}</p>

@@ -39,6 +39,9 @@ class News extends Model
     {
         return $this->hasMany(NewsTranslation::class, 'news_id', 'id');
     }
+      public function images() {
+        return $this->morphMany(Images::class, 'parentable')->orderBy('sort', 'ASC');
+    }
 
     public function scopeActive($query){
         return $query->where('status', 1);

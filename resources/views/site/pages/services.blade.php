@@ -10,9 +10,9 @@
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6" data-animate="animate__fadeInLeft">
                         <div class="mb-3">
-                        <h1 class="display-5 brownColor"> @lang('home.Services')</h1>
+                        <h1 class="display-5 brownColor">{{ $home_page_settings->transNow->title }}</h1>
                         </div>
-                                           <p class="mb-4 about_P">@lang('home.services_description')</p>
+                                           <p class="mb-4 about_P">{!! $home_page_settings->transNow->description !!}</p>
 
                         <a href="{{ route('site.services.index') }}" class="btn btn-primary py-md-3 px-md-5 greenbg">@lang('admin.see_more')</a>
                     </div>

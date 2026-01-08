@@ -4,7 +4,9 @@
 @section('meta_key', @$metaSetting->where('key', 'news_meta_key_' . $current_lang)->first()->value)
 @section('meta_description', @$metaSetting->where('key', 'news_meta_description_' . $current_lang)->first()->value)
 
-
+@php
+    $settings = \App\Settings\SettingSingleton::getInstance();
+@endphp
 @section('content')
     <!-- Products Start -->
     <section class="projects-alt">
@@ -32,11 +34,11 @@
                             <!-- Content -->
                             <div class="col-lg-7">
                                 <div class="news-body">
-                                    <h3 class="news-title">
+                                    <h3 class="news-title greenColor">
                                         <p>{{ @$project->title }}</p>
                                     </h3>
 
-                                    <p class="news-excerpt">
+                                    <p class="news-excerpt greenColor">
                                        {!! $project->description !!} </p>
 
 
@@ -64,34 +66,30 @@
 
     <!-- our-partner -->
     @include('site.pages.our-partner')
-    <!-- WhatsApp Popup Modal -->
-    <div class="modal fade" id="whatsModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg" style="border-radius:16px; overflow:hidden;">
+<!-- WhatsApp Popup Modal -->
+<div class="modal fade" id="whatsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius:16px; overflow:hidden;">
+      
+     
 
-                <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title fw-bold wppopup">Need help?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+      <div class="modal-body pt-2">
+      <i class="bi bi-whatsapp wp_icon "></i>
 
-                <div class="modal-body pt-2">
-                    <p class="mb-3 text-muted">
-                        Chat with us on WhatsApp for investment details, pricing, and partnerships.
-                    </p>
+        <a class="btn svc-btn w-100 py-2" 
+        style="margin: 0.5rem 0; "
+           target="_blank"
+           href="https://wa.me/2{{ $settings->getItem('whatsapp') }}">
+              @lang('site.chat_on_whatsapp')
+        </a>
 
-                    <a class="btn svc-btn w-100 py-2" target="_blank"
-                        href="https://wa.me/201055857775?text=Hello%20I%20want%20to%20know%20more%20about%20your%20agricultural%20projects">
-                        Open WhatsApp
-                    </a>
+     
+      </div>
 
-                    <small class="d-block text-center mt-3 text-muted">
-                        We typically reply within minutes.
-                    </small>
-                </div>
-
-            </div>
-        </div>
     </div>
+  </div>
+</div>
+
 @endsection
 
 <style>

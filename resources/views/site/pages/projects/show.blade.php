@@ -4,7 +4,9 @@
 @section('meta_key', @$news->meta_key )
 @section('meta_description', @$news->meta_description )
 
-
+@php
+    $settings = \App\Settings\SettingSingleton::getInstance();
+@endphp
 @section('content')
 <section class="investment-details py-5">
   <div class="container">
@@ -17,7 +19,7 @@
      
       <div class="col-lg-6" data-animate="animate__fadeInRight">
         <h2 class="fw-bold text-brown mb-3">{{ $projects->title ?? __('messages.No Title') }}</h2>
-        <p class="mb-3 text-muted">
+        <p class="mb-3 text-muted ">
           {!!  $projects->description ?? __('messages.No Description') !!}
         </p>
 
@@ -33,7 +35,7 @@
           *Figures are estimated and may vary based on soil type, variety, and market conditions.
         </p> --}}
 
-        <a href="{{ route('site.contact-us') }}" class="btn btn-success me-2">@lang('contact_us.request_contact')</a>
+        <a href="https://wa.me/2{{ $settings->getItem('whatsapp') }}" class="btn btn-success me-2">@lang('contact_us.request_contact')</a>
         <a href="{{ route('site.projects.index') }}" class="btn btn-outline-secondary backbtn">@lang('contact_us.back_to_investment')</a>
       </div>
     </div>

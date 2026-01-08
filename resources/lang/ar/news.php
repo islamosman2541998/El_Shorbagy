@@ -30,6 +30,6 @@ return [
     'status_changed_sucessfully'  => 'تم تغيير الحالة بنجاح',
     'delete_all_sucessfully'      => 'المقالات المحذوفة بنجاح',
     'our_news'                    => 'اخبارنا',
-
+  
 ];
 

@@ -54,4 +54,5 @@ return [
     'view_all_products' => 'View All Products',
     'view_all_blogs'    => 'View All Blogs',
     'view_all_faq_questions'       => 'View All FAQ Questions',
+    'chat_on_whatsapp' => 'Chat on WhatsApp'
 ];

@@ -1,11 +1,15 @@
+   @php
+        $settings = \App\Settings\SettingSingleton::getInstance();
+    @endphp
+
 <section dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
     <div class="container faq-wrap">
         <!-- Sidebar -->
         <aside class="faq-side  wow fadeInLeft">
-            <h3>@lang('home.faq-index_h3')</h3>
-            <p class="mini">@lang('home.faq-index_pp')</p>
+            <h3 class="greenColor">@lang('home.faq-index_pp')</h3>
+          
             <div class="faq-cta">
-                <a class="btn1 primary" href="{{ route('site.contact-us')}}">@lang('home.contact')</a>
+                <a class="btn1 primary" href="https://wa.me/2{{ $settings->getItem('whatsapp') }}">@lang('home.contact')</a>
                 <a class="btn1 light" href="{{ route('site.site.blogs.index')}}">@lang('home.read')</a>
             </div>
         </aside>
@@ -13,7 +17,7 @@
         <!-- Main -->
         <div class="category  wow fadeInRight">
             <!-- Filter chips -->
-            <div class="faq-controls controls">
+            {{-- <div class="faq-controls controls">
                 <span class="chip  {{ $selectedCategory == 0 ? 'active': '' }}" data-tag="@lang('All')" wire:click="changeCategory(0)"> @lang('All')</span>
                 @forelse ($categories as $key => $category)
                 <span class="chip {{ $selectedCategory == $category->id ? 'active': '' }} wow fadeInUp" style="animation-delay: 0.{{ ($key + 1) }}s;"" data-tag=" {{ @$category->transNow->title }}" wire:click="changeCategory({{ $category->id }})"> {{ @$category->transNow->title }} </span>
@@ -21,7 +25,7 @@
                 <p>@lang('home.no_faq')</p>
                 @endforelse
 
-        </div>
+        </div> --}}
 
             <div class="faq">
                 @forelse ($faq_questions as $key => $question)

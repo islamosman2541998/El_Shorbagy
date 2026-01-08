@@ -30,14 +30,14 @@
         </div>
         <div class="col-lg-3">
             <div class="d-flex align-items-center justify-content-end">
-                <a class="btn btn-primary btn-square rounded-circle me-2 greenbg"
-                    href="{{ $settings->getItem(val: 'twitter') }}"><i class="fab fa-twitter mt-1"></i></a>
-                <a class="btn btn-primary btn-square rounded-circle me-2 greenbg"
-                    href="{{ $settings->getItem(val: 'facebook') }}"><i class="fab fa-facebook-f mt-1"></i></a>
-                <a class="btn btn-primary btn-square rounded-circle me-2 greenbg"
-                    href="{{ $settings->getItem(val: 'linkedin') }}"><i class="fab fa-linkedin-in mt-1"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle greenbg  me-2" href="{{ $settings->getItem('tiktok') }}"><i
+                        class="fa-brands fa-tiktok"></i></a>
                 <a class="btn btn-primary btn-square rounded-circle greenbg  me-2"
-                    href="{{ $settings->getItem(val: 'instagram') }}"><i class="fab fa-instagram mt-1  "></i></a>
+                    href="{{ $settings->getItem('facebook') }}"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle greenbg  me-2"
+                    href="{{ $settings->getItem('instagram') }}"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle greenbg  me-2"
+                    href="{{ $settings->getItem('youtube') }}"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>

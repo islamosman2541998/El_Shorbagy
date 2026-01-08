@@ -145,7 +145,9 @@ class ProjectsController extends Controller
             }
             session()->flash('success', trans('project.status_changed_sucessfully'));
         }
+        
         if ($request['unpublish'] == 1) {
+
             $projects = Projects::findMany($request['record']);
             foreach ($projects as $project) {
                 $project->update(['status' => 0]);

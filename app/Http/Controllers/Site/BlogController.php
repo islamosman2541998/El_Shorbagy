@@ -21,6 +21,10 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('site.pages.blogs.show', compact('blog'));
+
+        
+                $blogs = Blog::with('translations')->where('status', 1)->get();
+
+        return view('site.pages.blogs.show', compact('blog', 'blogs'));
     }
 }

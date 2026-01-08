@@ -261,3 +261,19 @@ document.querySelectorAll('.faq-toggle').forEach((btn)=>{
       modal.show();
     }, 800);
   });
+    new Swiper(".miniBlogsSwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    loop: true,                 // مهم عشان تكمل لف
+    speed: 900,                 // نعومة الحركة
+    autoplay: {
+      delay: 1800,              // كل قد ايه يتحرك
+      disableOnInteraction: false, // لو سحبتيه يكمل بعدها
+      pauseOnMouseEnter: true      // يقف لما الماوس يقف عليه (اختياري)
+    },
+    navigation: {
+      nextEl: ".mini-next",
+      prevEl: ".mini-prev"
+    },
+    grabCursor: true
+  });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Models\Blog;
+use App\Models\HomeSettingPage;
 use App\Models\News;
 use App\Models\About;
 use App\Models\Partner;
@@ -39,6 +40,8 @@ class HomeController extends Controller
         $statistics = Statistic::with('transNow')->feature()->active()->orderBy('sort','ASC')->get();    
         $services = Services::with('transNow')->feature()->active()->orderBy('sort','ASC')->get();   
         $whyus = WhyChooseUs::with('transNow')->first(); 
+        $home_page_settings = HomeSettingPage::with('transNow')->where('title_section', 'services')->first();
+        // dd($home_page_settings);
        
         $page_name = 'home';
 
@@ -54,7 +57,8 @@ class HomeController extends Controller
             'faq_questions',
             'statistics',
             'services',
-            'whyus'
+            'whyus',
+            'home_page_settings'
         ));
     }
 }

@@ -570,7 +570,7 @@ return [
     'projects' => ' Projects',
 
     'about-us' => 'About-us',
-    'contact-us' => 'Contact-us',
+    'contact-us' => 'Whatsapp',
     'see_more' => 'See More',
     'quicklinks' => 'Quick Links',
     'popular_projects' => 'Popular Projects',
@@ -579,7 +579,7 @@ return [
    'icon_image' => 'Icon Image',
     'sub_desc1_in' => 'Sub Description 1 in',
     'sub_desc2_in' => 'Sub Description 2 in ',
-    
+     'what_clients_say' => 'What Our Clients Say',
 
 
 

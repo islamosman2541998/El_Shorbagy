@@ -27,7 +27,7 @@
                             <h4 class="text-white mb-4">@lang('admin.popular_projects')</h4>
                             <div class="d-flex flex-column justify-content-start">
                                 @forelse ($popularprojects as $popularproject)
-                                    <a class="text-white mb-2" href="#"><i
+                                    <a class="text-white mb-2" href="{{ route('site.projects.show', $popularproject->id) }}"><i
                                             class="bi bi-arrow-right text-white me-2"></i>
                                         {{ $popularproject->trans->where('locale', app()->getLocale())->first()->title ?? 'No Title' }}</a>
                                 @empty
@@ -51,15 +51,19 @@
                                 <i class="bi bi-telephone text-white me-2"></i>
                                 <p class="text-white mb-0">{{ $settings->getItem('mobile') }}</p>
                             </div>
+                            <div class="d-flex footer-social mb-2">
+                                <i class="bi bi-whatsapp text-white me-2" style="margin-top: -0.5rem;"></i>
+                                <p class="text-white mb-0">{{ $settings->getItem('whatsapp') }}</p>
+                            </div>
                             <div class="d-flex mt-4">
                                 <a class="btn btn-secondary btn-square rounded-circle me-2"
-                                    href="{{ $settings->getItem('twitter') }}"><i class="fab fa-twitter"></i></a>
+                                    href="{{ $settings->getItem('tiktok') }}"><i class="fa-brands fa-tiktok"></i></a>
                                 <a class="btn btn-secondary btn-square rounded-circle me-2"
                                     href="{{ $settings->getItem('facebook') }}"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-secondary btn-square rounded-circle me-2"
-                                    href="{{ $settings->getItem('linkedin') }}"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-secondary btn-square rounded-circle me-2"
                                     href="{{ $settings->getItem('instagram') }}"><i class="fab fa-instagram"></i></a>
+                                 <a class="btn btn-secondary btn-square rounded-circle me-2"
+                                    href="{{ $settings->getItem('youtube') }}"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>

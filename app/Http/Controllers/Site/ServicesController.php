@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Site;
 
 use App\Models\Occasion;
+use App\Models\Services;
+use App\Models\HomeSettingPage;
 use App\Settings\SettingSingleton;
 use App\Http\Controllers\Controller;
-use App\Models\Services;
 
 class ServicesController extends Controller
 {
@@ -13,8 +14,10 @@ class ServicesController extends Controller
     {
         $services = Services::with('trans')->where('status', 1)
             ->get();
+         $home_page_settings = HomeSettingPage::with('transNow')->where('title_section', 'services')->first();
 
-        return view('site.pages.services.index', compact('services'));
+
+        return view('site.pages.services.index', compact('services', 'home_page_settings'));
     }
 
   

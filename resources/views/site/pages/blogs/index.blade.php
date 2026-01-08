@@ -23,7 +23,7 @@
                                 <img class="img-fluid blogImg" src="{{ asset($blog->pathInView()) }}" alt="">
                                 <a class="blog-overlay" href="{{ route('site.site.blogs.show', $blog->id) }}">
                                     <h4 class="text-white">{{ $blog->title }}</h4>
-                                    <span class="text-white fw-bold">{{ $blog->created_at }}</span>
+                                    {{-- <span class="text-white fw-bold">{{ $blog->created_at }}</span> --}}
                                 </a>
                             </div>
                         </div>

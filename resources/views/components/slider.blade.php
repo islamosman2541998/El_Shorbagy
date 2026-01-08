@@ -19,7 +19,7 @@
                                 {{ $slide->transNow->title ?? 'No Title' }}</h3>
                             <a href="{{ route('site.about-us') }}"
                                 class="btn btn-primary py-md-3 px-md-5 me-3 lightgreen">@lang('admin.about-us')</a>
-                            <a href="{{ route('site.contact-us') }}"
+                            <a href="https://wa.me/2{{ $settings->getItem('whatsapp') }}"
                                 class="btn btn-secondary py-md-3 px-md-5 lightbrown">@lang('admin.contact-us')</a>
                         </div>
                     </div>

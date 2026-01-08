@@ -6,9 +6,14 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\NewsRequest;
+use App\Models\Images;
 
 class NewsController extends Controller
 {
+        public $productPath;
+
+        public $galleryPath;
+
     public function index(Request $request)
     {
         $query = News::query()->with('trans')->orderBy('id', 'ASC');
@@ -40,7 +45,24 @@ class NewsController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $this->upload_file($request->file('image'), ('news'));
         }
-        News::create($data);
+
+        
+     $news =   News::create($data);
+         if (@$data['gallery'] != null || @$data['gallery'] != []) {
+            foreach($data['gallery'] as $key => $gallery){
+                if($gallery != null){ $img = upload_file( $gallery['image'] , ('images'));  }
+                    Images::create([
+                    'url' =>  $img,
+                    'sort' => $gallery['sort'],
+                    'image_type' => 'image',
+                    'parentable_id' => $news->id,
+                    'parentable_type' =>  News::class
+                    ]);
+               
+            }
+            
+        }
+
         session()->flash('success', trans('message.admin.created_sucessfully'));
         return back();
     }
