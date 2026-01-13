@@ -22,7 +22,7 @@
                                          <h4 class="greenColor">{{ $new->title ?? 'No Title' }}</h4>
                                          <span class="greenColor">{!! Str::limit($new->description, 100) !!}</span>
                                          {{-- <span>{{ $new->created_at ?? 'No Date' }}</span> --}}
-                                         <a href="{{ route('site.news.show', $new->id) }}"><span>@lang('home.read_more')</span></a>
+                                         <a href="{{ route('site.news.index') }}"><span>@lang('home.read_more')</span></a>
                                      </div>
                                  </div>
                              </div>

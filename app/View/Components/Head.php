@@ -23,6 +23,7 @@ class Head extends Component
      */
     public function __construct($title = null, $currentLang = 'en', $pageName = null)
     {
+        
         $this->currentLang = $currentLang;
         $this->settings = SettingSingleton::getInstance(); 
         $this->pageName = $pageName ?? $this->getPageNameFromRoute();

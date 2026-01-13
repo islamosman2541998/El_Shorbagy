@@ -37,7 +37,7 @@ class Footer extends Component
 
         $this->settings = SettingSingleton::getInstance();
 
-        $this->footerLinks = Menue::with('trans')->footer()->active()->get();
+        $this->footerLinks = Menue::with('trans')->orderBy('sort', 'ASC')->footer()->active()->get();
 
 
         $this->facebookLink = $this->settings->getItem('facebook') ?? 'not found';
