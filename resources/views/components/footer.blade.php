@@ -27,7 +27,7 @@
                             <h4 class="text-white mb-4">@lang('admin.popular_projects')</h4>
                             <div class="d-flex flex-column justify-content-start">
                                 @forelse ($popularprojects as $popularproject)
-                                    <a class="text-white mb-2" href="{{ route('site.projects.show', $popularproject->id) }}"><i
+                                    <a class="text-white mb-2" href="{{ route('site.projects.index') }}"><i
                                             class="bi bi-arrow-right text-white me-2"></i>
                                         {{ $popularproject->trans->where('locale', app()->getLocale())->first()->title ?? 'No Title' }}</a>
                                 @empty
