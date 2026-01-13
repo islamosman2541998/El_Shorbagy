@@ -19,21 +19,8 @@
                         {{-- <h6 class=" text-uppercase greenColor">{{ $about_us->transNow->subtitle ?? 'El shorbagy ' }}</h6> --}}
                         <h1 class="display-5 brownColor">{{ $about_us->transNow->title ?? 'About Us' }}</h1>
                     </div>
-                    <p class="mb-4 about_P">{!! $about_us->transNow->description ?? 'No description available' !!}</p>
-                    {{-- <div class="row gx-5 gy-4">
-                        <div class="col-sm-6">
-                            <i class="fa fa-seedling display-1 brownColor"></i>
-                            <h4 class="greenColor">Smart Farming & Resource Efficiency</h4>
-                            <p class="mb-0 about_P">We use modern irrigation and monitoring practices to boost yields
-                                while reducing water and energy waste—without compromising quality.</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="fa fa-award display-1 brownColor"></i>
-                            <h4 class="greenColor">ATrusted Expertise & Proven Results</h4>
-                            <p class="mb-0 about_P">Precise technical management, transparent follow-ups, and regular
-                                performance reports—so you can make confident, data-backed investment decisions.</p>
-                        </div>
-                    </div> --}}
+                    <p class="mb-4 about_P">{!! $about_us->transNow->sub_description ?? 'No description available' !!}</p>
+                  <a href="{{ route('site.about-us') }}" class="btn btn-primary py-md-3 px-md-5 greenbg">@lang('admin.see_more')</a>
                 </div>
             </div>
         </div>

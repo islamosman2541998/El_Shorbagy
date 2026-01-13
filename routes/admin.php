@@ -134,6 +134,8 @@ Route::group([
                 Route::post('pages/actions', [PagesController::class, 'actions'])->name('pages.actions');
                 // ----- End Pages -------------------------------------------
 
+                Route::get('news/gallery/{id}/destroy', [NewsController::class, 'destroyGalleryImage'])->name('news.gallery.destroy');
+
                 //----------------Start Sliders----------------------------//
                 Route::resource('slider', SliderController::class);
                 Route::get('slider/update-status/{id}', [SliderController::class, 'update_status'])->name('slider.update-status');
@@ -167,7 +169,7 @@ Route::group([
                 //--------------- Start WhyChooseUs -------------------------------------
                 Route::get('why-choose-us', [WhyChooseUsController::class, 'edit'])->name('why-choose-us.edit');
                 Route::post('why-choose-us', [WhyChooseUsController::class, 'update'])->name('why-choose-us.update');
-               
+
                 // ----- subscribes -----------------------------------------------
                 Route::resource('subscribes', SubscribesController::class);
                 //--------------- End subscribes ---------------------------------
@@ -177,7 +179,7 @@ Route::group([
                 Route::get('jobs/{job}/toggle-status', [App\Http\Controllers\Admin\JobController::class, 'toggleStatus'])->name('jobs.toggle-status');
                 Route::get('jobs/{job}/toggle-feature', [App\Http\Controllers\Admin\JobController::class, 'toggleFeature'])->name('jobs.toggle-feature');
 
- /************************** start CareerCategory ************************************/
+                /************************** start CareerCategory ************************************/
                 Route::resource('career_category', CareerCategoryController::class);
                 Route::get('career_category-update-featured/{id}', [CareerCategoryController::class, 'update_featured'])->name('career_category.update-featured');
                 Route::get('career_category-update-status/{id}', [CareerCategoryController::class, 'update_status'])->name('career_category.update-status');
@@ -247,13 +249,13 @@ Route::group([
 
                 // ----- Cv -----------------------------------------------
                 Route::get('/cvs', [AdminCvController::class, 'index'])->name('cvs.index');
-               
+
                 Route::delete('/cvs/{cv}', [AdminCvController::class, 'destroy'])->name('cvs.destroy');
 
                 // ----- End ServiceRequest -------------------------------------------
                 // ----- Cv -----------------------------------------------
                 Route::get('/service_request', [ServiceRequestController::class, 'index'])->name('service_request.index');
-               
+
                 Route::delete('/service_request/{service_request}', [ServiceRequestController::class, 'destroy'])->name('service_request.destroy');
 
                 // ----- End ServiceRequest -------------------------------------------

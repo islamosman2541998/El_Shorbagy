@@ -56,6 +56,27 @@
                                                 });
                                             </script>
                                         </div>
+                                        {{-- sub description ------------------------------------------------------------------------------------- --}}
+
+                                        <div class="row mb-3">
+                                            <label for="example-text-input"
+                                                class="col-sm-2 col-form-label">{{ trans('admin.sub_description_in') . trans('lang.' . Locale::getDisplayName($locale)) }}
+                                            </label>
+                                            <div class="col-sm-10 mb-2">
+                                                <textarea id="sub_description{{ $key }}" name="{{ $locale }}[sub_description]"> {{ @$about->trans->where('locale', $locale)->first()->sub_description }} </textarea>
+                                                @if ($errors->has($locale . '.sub_description'))
+                                                    <span
+                                                        class="missiong-spam">{{ $errors->first($locale . '.sub_description') }}</span>
+                                                @endif
+                                            </div>
+
+                                            <script type="text/javascript">
+                                                CKEDITOR.replace('sub_description{{ $key }}', {
+                                                    filebrowserUploadUrl: "{{ route('admin.ckeditor.upload', ['_token' => csrf_token()]) }}",
+                                                    filebrowserUploadMethod: 'form'
+                                                });
+                                            </script>
+                                        </div>
                                         {{-- vision ------------------------------------------------------------------------------------- --}}
                                         <div class="row mb-3">
                                             <label for="example-text-input"
