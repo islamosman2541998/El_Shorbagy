@@ -15,7 +15,7 @@
         <div class="container">
             <div class="mx-auto text-center mb-5 contactDiv">
                 {{-- <h6 class="text-primary text-uppercase">Contact Us</h6> --}}
-                <h1 class="display-5" style="    padding: 0 6%;">@lang('admin.contact-us')</h1>
+                {{-- <h1 class="display-5" style="    padding: 0 6%;">@lang('admin.contact-us')</h1> --}}
             </div>
             <div class="row g-0">
                 <div class="col-lg-7">
