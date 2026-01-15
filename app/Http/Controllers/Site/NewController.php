@@ -12,7 +12,7 @@ class NewController extends Controller
     {
         $news = News::with(['translations', 'images'])
             ->where('status', 1)
-            ->orderBy('sort', 'desc')
+            ->orderBy('sort', 'asc')
             ->get();
             
 
