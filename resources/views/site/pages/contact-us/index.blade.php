@@ -45,7 +45,7 @@
                                 <span class="text-white">{{ $settings->getItem('email') }}</span>
                             </div>
                         </div>
-                        <div class="d-flex contact-social">
+                        <div class="d-flex contact-social mb-4">
                             <div
                                 class="bg-primary rounded-circle d-flex align-items-center justify-content-center contactform">
                                 <i class="bi bi-phone-vibrate fs-4 text-white"></i>
@@ -54,6 +54,23 @@
                                 <h5 class="text-white">@lang('admin.phone')</h5>
                                 <span class="text-white">
                                     {{ $settings->getItem('mobile') }}</span>
+                            </div>
+                        </div>
+                        <div class="d-flex contact-social">
+                            
+                            <div
+                                class="bg-primary rounded-circle d-flex align-items-center justify-content-center contactform">
+                                <a href="https://wa.me/2{{ $settings->getItem('whatsapp') }}" target="_blank">
+                                    <i class="bi bi-whatsapp fs-4 text-white"></i>
+                                </a>
+                            </div>
+                            <div class="ps-3">
+                                <a href="https://wa.me/2{{ $settings->getItem('whatsapp') }}" target="_blank">
+                                     <h5 class="text-white">@lang('admin.whatsapp')</h5>
+                                <span class="text-white">
+                                    {{ $settings->getItem('whatsapp') }}</span>
+                                </a>
+                               
                             </div>
                         </div>
 
@@ -74,4 +91,8 @@
     [dir=rtl] .contact-social {
         gap: 15px !important;
     }
+   .contact-social .bi-whatsapp::before {
+    content: "\f618";
+    margin-top: 2px !important;
+}
 </style>
