@@ -10,15 +10,13 @@ class NewController extends Controller
 {
     public function index()
     {
-        // إضافة images للـ eager loading
         $news = News::with(['translations', 'images'])
             ->where('status', 1)
-            ->orderBy('sort', 'ASC')
+            ->orderBy('sort', 'desc')
             ->get();
             
-        $first_news = $news->first();
 
-        return view('site.pages.news.index', compact('news', 'first_news'));
+        return view('site.pages.news.index', compact('news'));
     }
 
     public function show(News $news)
