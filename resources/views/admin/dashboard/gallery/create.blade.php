@@ -48,7 +48,7 @@
                                                         <label for="example-text-input" class="col-sm-2 col-form-label">{{ trans('admin.slug_in') . trans('lang.' .Locale::getDisplayName($locale)) }} </label>
 
                                                         <div class="col-sm-10">
-                                                            <input type="text" id="slug{{ $key }}" name="{{ $locale }}[slug]" value="{{ old($locale . '.slug') }}" class="form-control slug" required>
+                                                            <input type="text" id="slug{{ $key }}" name="{{ $locale }}[slug]" value="{{ old($locale . '.slug') }}" class="form-control slug" >
                                                             @if ($errors->has($locale . '.slug'))
                                                             <span class="missiong-spam">{{ $errors->first($locale . '.slug') }}</span>
                                                             @endif
