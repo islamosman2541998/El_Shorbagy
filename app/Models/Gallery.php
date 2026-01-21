@@ -11,7 +11,7 @@ class Gallery extends Model
 {
     use HasFactory, Translatable; 
 
-    protected $table = 'gallery_images';
+    protected $table = 'galleries';
     public $type;
 
     protected $fillable = [
