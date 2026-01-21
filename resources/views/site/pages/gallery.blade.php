@@ -129,9 +129,9 @@
 }
 
 .mini-btn:hover {
-    background: #d4af37;
-    border-color: #d4af37;
-    color: #000;
+    background: #083427;
+    border-color: #083427;
+    color: #ffffff;
     transform: scale(1.1);
 }
 
