@@ -13,9 +13,11 @@
    <!-- About -->
     @include('site.pages.about')
 
+   <!-- Gallery -->
+    @include('site.pages.gallery')
     
    <!-- statistics -->
-    @include('site.pages.statistics')
+    {{-- @include('site.pages.statistics') --}}
 
 
    <!-- services -->

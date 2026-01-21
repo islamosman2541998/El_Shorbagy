@@ -584,6 +584,7 @@ return [
     'what_clients_say' => 'What Our Clients Say',
     'add_new_images' => 'Add New Images',
     'add_image' => 'Add Image',
+    'gallery' => 'Gallery',
 
 
 

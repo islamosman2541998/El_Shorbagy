@@ -5,7 +5,7 @@
 
     @if ($show_services)
         <!-- Services Start -->
-        <div class="container-fluid  ">
+        <div class="container-fluid pt-5 ">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6" data-animate="animate__fadeInLeft">

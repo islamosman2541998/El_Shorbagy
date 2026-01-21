@@ -599,6 +599,7 @@ return [
   'what_clients_say' => 'اراء عملاؤنا',
   'add_new_images' => 'إضافة صور جديدة',
   'add_image' => 'إضافة صورة',
+  'gallery' => 'المعرض',
 
 
 

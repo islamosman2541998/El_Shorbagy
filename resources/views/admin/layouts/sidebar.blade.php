@@ -401,6 +401,11 @@
                         <i class="fa-brands fa-microblog"></i>
                         @lang('admin.blogs')</a>
                 </li>
+                <li>
+                    <a href="{{ url('/admin/gallery') }}">
+                        <i class="fas fa-images"></i>
+                        @lang('admin.gallery')</a>
+                </li>
 
                 {{--           portfolio             --}}
 

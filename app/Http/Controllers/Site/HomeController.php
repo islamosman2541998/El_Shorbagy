@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Models\Faq;
 use App\Models\Blog;
-use App\Models\HomeSettingPage;
 use App\Models\News;
 use App\Models\About;
+use App\Models\Gallery;
 use App\Models\Partner;
 use App\Models\Product;
+use App\Models\Services;
 use App\Models\PromoCode;
+use App\Models\Statistic;
+use App\Models\WhyChooseUs;
 use App\Models\PaymentMethod;
+use App\Models\HomeSettingPage;
 use App\Models\ProductCategory;
 use App\Models\AboutTranslation;
 use App\Settings\SettingSingleton;
 use App\Http\Controllers\Controller;
-use App\Models\Faq;
-use App\Models\Services;
-use App\Models\Statistic;
-use App\Models\WhyChooseUs;
 
 class HomeController extends Controller
 {
@@ -41,6 +42,10 @@ class HomeController extends Controller
         $services = Services::with('transNow')->feature()->active()->orderBy('sort','ASC')->get();   
         $whyus = WhyChooseUs::with('transNow')->first(); 
         $home_page_settings = HomeSettingPage::with('transNow')->where('title_section', 'services')->first();
+        $galleries = Gallery::with('trans')
+            ->active()
+            ->orderBy('sort', 'ASC')
+            ->get();
         // dd($home_page_settings);
        
         $page_name = 'home';
@@ -58,7 +63,8 @@ class HomeController extends Controller
             'statistics',
             'services',
             'whyus',
-            'home_page_settings'
+            'home_page_settings',
+            'galleries'
         ));
     }
 }
