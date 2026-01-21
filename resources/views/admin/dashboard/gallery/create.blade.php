@@ -171,7 +171,7 @@
                                                         <label for="example-number-input" col-form-label>
                                                             @lang('articles.sort'):</label>
                                                         <div class="col-sm-12">
-                                                            <input class="form-control" type="number" placeholder="@lang('articles.sort'):" id="example-number-input" name="sort" value="{{ old('sort') }}">
+                                                            <input class="form-control" type="number" placeholder="@lang('articles.sort'):" required id="example-number-input" name="sort" value="{{ old('sort') }}">
                                                         </div>
                                                     </div>
                                                 </div>
