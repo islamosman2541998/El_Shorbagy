@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Models\About;
+use App\Models\Gallery;
 use App\Models\Statistic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,6 +23,10 @@ class AboutController extends Controller
             $raw = $trans->core_values;
             $coreValues = is_array($raw) ? $raw : (json_decode($raw, true) ?? []);
         }
-        return view('site.pages.about.index', compact('about_us', 'statistics'));
+         $galleries = Gallery::with('trans')
+            ->active()
+            ->orderBy('sort', 'ASC')
+            ->get();
+        return view('site.pages.about.index', compact('about_us', 'statistics', 'galleries'));
     }
 }

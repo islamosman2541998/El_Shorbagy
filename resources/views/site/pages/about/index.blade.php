@@ -33,7 +33,7 @@
 
     
    <!-- statistics -->
-    @include('site.pages.statistics')
+    @include('site.pages.gallery')
 
      <!-- ============== VISION & MISSION SECTION ============== -->
 <section class="vision-mission">
