@@ -32,7 +32,7 @@
    </div>
 
     
-   <!-- statistics -->
+   <!-- Gallery -->
     @include('site.pages.gallery')
 
      <!-- ============== VISION & MISSION SECTION ============== -->
@@ -74,5 +74,8 @@
 <style>
     .page_about{
         margin-top: 70px !important;
+    }
+    .swiper-wrapper{
+      height: 30% !important; 
     }
 </style>
